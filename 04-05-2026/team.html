@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="team.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.hero{
+  height:600px;
+  background:url("https://bridge248.qodeinteractive.com/wp-content/uploads/2018/06/title-area-team.jpg") center;
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+}
+
+.hero > *{
+  position:relative;
+  z-index:1;
+}
+
+.navbar{
+  position:absolute;
+  top:20px;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 50px;
+  color:white;
+}
+
+.logo{
+  height:40px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+}
+
+.homebtn{
+  color:white;
+  letter-spacing:2px;
+  font-size:14px;
+}
+.teambtn{
+  color:white;
+  letter-spacing:2px;
+  font-size:14px;
+  text-decoration: none;
+}
+.teambtn:hover{
+  text-decoration: underline;
+}
+.aboutbtn{
+  color:white;
+  letter-spacing:2px;
+  font-size:14px;
+   text-decoration: none;
+}
+.aboutbtn:hover{
+   text-decoration: underline;
+}
+.contactbtn{
+  color:white;
+  letter-spacing:2px;
+  font-size:14px;
+   text-decoration: none;
+}
+.contactbtn:hover{
+   text-decoration: underline;
+}
+.social-icons i{
+  margin-left:15px;
+  font-size:18px;
+  cursor:pointer;
+  color:pink;
+}
+.shape-left{
+  left:1%;
+  margin-top:400px;
+  width:150px;
+}
+
+.text-card{
+  position:absolute;
+  top:55%; 
+  left:50%;
+  transform:translate(-50%, -50%);
+  color:rgb(230, 224, 224);
+  font-size:60px;  
+  font-family: 'Playfair Display', serif;
+  font-weight:400;
+}
+
+.team-section{
+  padding:100px 80px;
+  background:#e6ded7
+}
+
+.team-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+}
+
+.team-text{
+  width:50%;
+}
+
+.team-history{
+  font-size:50px;
+  color:#303030;
+  font-family: 'Playfair Display', serif;
+  font-weight:400;
+  justify-content: center;
+  line-height:1.2;
+  margin-left:200px;
+  
+}
+
+.team-history strong{
+  font-style:italic;
+}
+
+.team-text p{
+  margin-top:20px;
+  color:#666;
+  text-align: center;
+  line-height:1.6;
+}
+
+.btn{
+  margin-top:20px;
+  padding:12px 30px;
+  border:1px solid #333;
+  background:transparent;
+  cursor:pointer;
+  transition:0.3s;
+  margin-left: 260px;
+}
+
+.btn:hover{
+  background:#000;
+  color:#fff;
+}
+
+.team-image{
+  width:50%;
+  text-align:center;
+}
+
+.team-image img{
+  width:80%;
+}
+
+.team-section1{
+  padding:100px 80px;
+}
+
+.team-container1{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+}
+
+.team-text1{
+  width:50%;
+}
+
+.team-history1{
+  font-size:50px;
+  color:#080808;
+  font-family: 'Playfair Display', serif;
+  font-weight:400;
+  justify-content: center;
+  line-height:1.2;
+  margin-left:200px;
+  
+}
+
+.team-history1 strong{
+  font-style:italic;
+}
+
+.team-text1 p{
+  margin-top:20px;
+  color:#666;
+  text-align: center;
+  line-height:1.6;
+}
+
+.btn1{
+  margin-top:20px;
+  padding:12px 30px;
+  border:1px solid #333;
+  background:transparent;
+  cursor:pointer;
+  transition:0.3s;
+  margin-left: 260px;
+}
+
+.btn1:hover{
+  background:#000;
+  color:#fff;
+}
+
+.team-image1{
+  width:50%;
+  text-align:center;
+}
+
+.team-image1 img{
+  width:80%;
+}
+
+.foot-img{
+  position: relative;
+  background: url("https://bridge248.qodeinteractive.com/wp-content/uploads/2018/06/footer-img.jpg") center;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+.foot-img::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.foot-img > *{
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-text{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-icons{
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons i{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-icons i:hover{
+  background: black;
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <header class="hero">
+
+  <div class="navbar">
+    <img class="logo" src="https://bridge248.qodeinteractive.com/wp-content/uploads/2018/06/lmobile-ogo.png">
+
+ 
+    <div class="nav-links">
+      <a class="homebtn" href="#">HOME</a>
+      <a class=teambtn href="team.html">TEAM</a>
+      <a class="aboutbtn" href="about.html">ABOUT</a>
+      <a class="contactbtn" href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="social-icons">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+  </div>
+  <img class="shape-left" src="https://bridge248.qodeinteractive.com/wp-content/uploads/2018/06/graphic-1.png">
+
+  <h1 class="text-card">Our team</h1>
+  </header>
+
+ <section class="team-section">
+  <div class="team-container">
+
+    <div class="team-text">
+      <h1 class="team-history">
+        <strong>History</strong> of manufacturer
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation
+      </p>
+      <button class="btn">READ ALL</button>
+    </div>
+
+    <div class="team-image">
+      <img src="https://bridge248.qodeinteractive.com/wp-content/uploads/2018/06/team-1.png">
+    </div>
+
+  </div>
+</section>
+
+<section class="team-section1">
+  <div class="team-container1">
+    <div class="team-image1">
+      <img src="https://bridge248.qodeinteractive.com/wp-content/uploads/2018/06/team-2.png">
+    </div>
+ 
+    <div class="team-text1">
+      <h1 class="team-history1">
+        <strong>History</strong> of manufacturer
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation
+      </p>
+      <button class="btn1">READ ALL</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="foot-img">
+
+  <h1 class="footer-logo">bridge</h1>
+
+  <p class="footer-text">
+    © Copyright Qode Interactive — All Rights Reserved <br>
+    Proudly Made For You.
+  </p>
+
+  <div class="footer-icons">
+    <i class="fa-brands fa-facebook-f"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-instagram"></i>
+  </div>
+
+</footer>
+</body>
+</html>
