@@ -17,16 +17,15 @@ header{
     justify-content:space-between;
      align-items:center;
     position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(180, 20, 20, 0.08);
-    animation:slideDown 1s ease;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow:0 2px 0px ;
 }
 .logo{
     font-size:42px;
     font-weight:700;
-    color:#111;
+
 }
 .logo span{
     color:#00d26a;
@@ -42,11 +41,11 @@ nav ul li a{
     color:#333;
     font-size:17px;
     font-weight:500;
-    transition:0.4s;
+    transition:0.4snone;
 }
 nav ul li a:hover,
 nav ul li a.active{
-    color:#00d26a;
+    color:#09f780;
 }
 /* SOCIAL ICONS */
 .social-icons{
@@ -73,16 +72,13 @@ nav ul li a.active{
     width:95%;
     height:100vh;
     margin:120px auto 0;
-    background:url('https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/single-img-3.jpg') center/cover ;
-    background:url('https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/single-img-4.jpg') center/cover ;
-    position:relative;
+    background:url('https://images.unsplash.com/photo-1535957998253-26ae1ef29506?q=80&w=436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover ;
     overflow:hidden;
-    animation:zoomBg 12s infinite alternate;
 }
 .overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.35);
+  
 }
 /* HERO CONTENT */
 .hero-content{
@@ -92,22 +88,20 @@ nav ul li a.active{
     transform:translate(-50%,-50%);
     text-align:center;
     z-index:2;
-    color:#fff;
-
-    animation:fadeUp 1.5s ease;
+    color:white;
 }
 .hero-content h3{
     font-size:60px;
     font-family:cursive;
     font-weight:400;
-
-    margin-bottom:10px;
-
-    animation:fadeText 2s infinite alternate;
+    margin-top:10px;
 }
 .hero-content h1{
     font-size:90px;
     font-weight:700;
+      background: radial-gradient(circle, #00ff88, white,brown);
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
     margin-bottom:30px;
 }
 /* BUTTON */
@@ -121,6 +115,7 @@ nav ul li a.active{
     font-weight:600;
     cursor:pointer;
     transition:0.4s;
+     box-shadow:0 10px 10px rgba(48, 47, 47, 0.2);
     animation:bounce 2s infinite;
 }
 .hero-content button:hover{
@@ -214,7 +209,6 @@ nav ul li a.active{
 }
 /* RIGHT IMAGE */
 .right-image{
-
     width:70%;
     position:relative;
 }
@@ -373,7 +367,7 @@ marquee span:hover{
 
  .section5{
       width:100%;
-      padding:80px 100px;
+      padding:70px 100px;
       background:#f7f7f7;
     }
      .features-container{
@@ -499,18 +493,63 @@ marquee span:hover{
       font-family:'Oswald', sans-serif;
       font-weight:500;
     }
-       .section8{
-      width:100%;
-      min-height:120vh;
-      background:#0a0d13;
-      position:relative;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      text-align:center;
-    }
+      .foot-img{
+  position: relative;
+  background: url("https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/slider-img-1.jpg");
+  height: 600px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+.foot-img::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.foot-img > *{
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-text{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-icons{
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons i{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-icons i:hover{
+  background: black;
+  color: white;
+}
     .small-title{
       color:#00d084;
       font-size:28px;
@@ -531,11 +570,11 @@ marquee span:hover{
     .subscribe-box{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:30px;
     }
 
     .subscribe-box input{
-      width:420px;
+      width:100px;
       height:72px;
       border:none;
       outline:none;
@@ -543,7 +582,7 @@ marquee span:hover{
       background:#0d1f3c;
       padding:0 35px;
       color:#fff;
-      font-size:18px;
+      font-size:15px;
     }
 
     .subscribe-box input::placeholder{
@@ -551,14 +590,14 @@ marquee span:hover{
     }
 
     .subscribe-box button{
-      width:230px;
+      width:100px;
       height:72px;
       border:none;
       border-radius:40px;
       background:#00d96f;
       color:#fff;
-      font-size:28px;
-      font-weight:600;
+      font-size:15px;
+      font-weight:300;
       cursor:pointer;
       transition:0.3s;
     }
@@ -569,26 +608,4 @@ marquee span:hover{
     }
 
    
-
-    /* Bottom Navigation */
-    .bottom-nav{
-      position:absolute;
-      bottom:45px;
-      display:flex;
-      gap:55px;
-    }
-
-    .bottom-nav a{
-      text-decoration:none;
-      color:#8f99ad;
-      font-size:18px;
-      font-weight:500;
-      transition:0.3s;
-    }
-
-    .bottom-nav a:hover{
-      color:#fff;
-    }
-
-  
 
