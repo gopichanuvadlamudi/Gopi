@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background-image: url("https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/background-2.jpg");
+    height: 100px;
+}
+/* HEADER */
+header{
+    width:100%;
+    position: fixed;
+    background:#fff;
+    padding:25px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(180, 20, 20, 0.08);
+}
+.logo{
+    font-size:42px;
+    font-weight:700;
+    color:#111;
+}
+.logo span{
+    color:#00d26a;
+}
+/* NAVIGATION */
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-size:17px;
+    font-weight:500;
+    transition:0.4s;
+}
+nav ul li a:hover,
+nav ul li a.active{
+    color:#00d26a;
+}
+/* SOCIAL ICONS */
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+.social-icons i{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#00d26a;
+    color:#fff;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.5s;
+}
+.social-icons i:hover{
+    transform:translateY(-5px) rotate(360deg);
+} 
+.hero{
+    width:95%;
+    height:100vh;
+    margin:120px auto 0;
+    background:url('https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/single-img-6.jpg') center/cover ;
+    overflow:hidden;
+}
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+    color:#121313;
+}
+.hero-content h1{
+    font-size:90px;
+    font-weight:700;
+    margin-top:300px;
+}
+.contact-card{
+  width: 80%;
+  max-width: 1000px;
+  margin: -300px auto 0;  
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+
+.contact-left{
+  width: 50%;
+}
+
+.contact-left input,
+.contact-left textarea{
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+}
+
+.contact-left textarea{
+  height: 100px;
+}
+
+.contact-left button{
+  padding: 10px 30px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+.contact-left button:hover{
+  background-color: aqua;
+}
+
+.contact-right{
+  width: 40%;
+}
+
+.contact-right h2{
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+ .foot-img{
+  position: relative;
+  background: url("https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/slider-img-2.jpg");
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(219, 217, 217);
+}
+
+.foot-img::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.5);
+}
+
+.foot-img > *{
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-text{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-icons{
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons i{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-icons i:hover{
+  background: black;
+  color: white;
+}
+    .small-title{
+      color:#00d084;
+      font-size:28px;
+      font-family:cursive;
+      margin-bottom:15px;
+      font-weight:500;
+    }
+
+    .main-title{
+      color:#fff;
+      font-size:64px;
+      line-height:1.2;
+      font-weight:700;
+      max-width:900px;
+      margin-bottom:50px;
+    }
+
+    .subscribe-box{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .subscribe-box input{
+      width:100px;
+      height:72px;
+      border:none;
+      outline:none;
+      border-radius:40px;
+      background:#0d1f3c;
+      padding:0 20px;
+      color:#fff;
+      font-size:15px;
+    }
+
+    .subscribe-box input::placeholder{
+      color:#cfcfcf;
+    }
+
+    .subscribe-box button{
+      width:100px;
+      height:72px;
+      border:none;
+      border-radius:40px;
+      background:#00d96f;
+      color:#fff;
+      font-size:15px;
+      font-weight:300;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .subscribe-box button:hover{
+      transform:translateY(-3px);
+      background:#00c964;
+    }   
+</style>
+</head>
+<body>
+      <!-- HEADER -->
+  <header>
+     <img src="https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/logo.png">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a class="aboutbutton" href="about1.html">About</a></li>
+        <li><a class="servicebutton" href="service1.html">Services</a></li>
+        <li><a class="blogbutton" href="blog1.html">Blog</a></li>
+        <li><a class="pricingbutton" href="pricing1.html">Pricing</a></li>
+        <li><a class="contactbutton" href="contact1.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="social-icons">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+  </header>
+<section class="hero">
+ <div class="hero-content">
+      <h1>Contact Us</h1>
+
+    </div>
+  </section>
+<br>
+<br>
+<section class="map-section">
+  <iframe
+    src="https://www.google.com/maps?q=Hyderabad,India&output=embed"
+    width="100%"
+    height="500"
+    style="border:0;">
+  </iframe>
+</section>
+
+<section class="contact-card">
+
+  <div class="contact-left">
+    <input type="text" placeholder="Name*">
+    <input type="email" placeholder="Email*">
+    <textarea placeholder="Message"></textarea>
+    <button>SEND</button>
+  </div>
+
+  <div class="contact-right">
+    <h2><strong>Visit</strong> our Workspace</h2>
+    <p>A workspace is a designated physical or digital area where tasks are performed, such as an office desk.</p>
+    <p>10AM-7PM Monday -Friday</p>
+    <p>12-05,MIYAPUR,HYDERABAD</p>
+    <p>+ (91) 9876543210</p>
+  </div>
+
+</section>
+<br>
+<br>
+
+<footer class="foot-img">
+
+  <h1 class="footer-logo">bridge</h1>
+
+<br>
+
+<div class="subscribe-box">
+      <input type="email" placeholder="Email Address">
+      <button>Subscribe</button>
+    </div>
+
+    <br>
+    <br>
+    
+     <p class="footer-text">
+    © Copyright Qode Interactive — All Rights Reserved <br>
+    Proudly Made For You.
+  </p>
+
+  <div class="footer-icons">
+    <i class="fa-brands fa-facebook-f"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-instagram"></i>
+  </div>
+
+</footer>
+
+   
+  </section>
+
+</body>
+</html>

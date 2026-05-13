@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+       *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background-image: url("https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/background-2.jpg");
+}
+/* HEADER */
+header{
+    width:100%;
+    position: fixed;
+    background:#fff;
+    padding:25px 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(180, 20, 20, 0.08);
+}
+.logo{
+    font-size:42px;
+    font-weight:700;
+    color:#111;
+}
+.logo span{
+    color:#00d26a;
+}
+/* NAVIGATION */
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-size:17px;
+    font-weight:500;
+    transition:0.4s;
+}
+nav ul li a:hover,
+nav ul li a.active{
+    color:#00d26a;
+}
+/* SOCIAL ICONS */
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+.social-icons i{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#00d26a;
+    color:#fff;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.5s;
+}
+.social-icons i:hover{
+    transform:translateY(-5px) rotate(360deg);
+} 
+.hero{
+    width:95%;
+    height:100vh;
+    margin:120px auto 0;
+    background:url('https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/slider-img-3.jpg') center/cover ;
+    overflow:hidden;
+}
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+    color:whitesmoke;
+}
+.hero-content h1{
+    font-size:90px;
+    font-weight:700;
+    margin-top:300px;
+}
+/* BUTTON */
+.hero-content button{
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:#00d26a;
+    color:#fff;
+    font-size:22px;
+    font-weight:600;
+    cursor:pointer;
+    transition: 0.5;
+}
+.hero-content button:hover{
+    background:#00b45b;
+    transform:scale(1.05);
+}
+.section1{
+
+    width:88%;
+    min-height:100vh;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+}
+/* LEFT SIDE */
+.left-content{
+    width:48%;
+}
+.left-content h1{
+    font-size:55px;
+    line-height:1;
+    color:#07193a;
+    font-weight:500;
+    margin-bottom:35px;
+}
+.left-content p{
+
+    font-size:20px;
+    line-height:1;
+    color:#777;
+    max-width:650px;
+    margin-bottom:60px;
+}
+.left-content p span{
+
+    font-weight:700;
+    color:#555;
+}
+/* PROFILE */
+.profile{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+.profile img{
+    width:300px;
+    height:175px;
+    border-radius:100%;
+    object-fit:cover;
+}
+.profile h3{
+    font-size:35px;
+    font-family:cursive;
+    font-weight:40;
+    color:#111;
+}
+/* RIGHT IMAGE */
+.right-image{
+    width:70%;
+    position:relative;
+}
+.right-image img{
+    width:100%;
+    height:100%;
+}
+.brand-section{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    padding:80px 8%;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Left Image */
+
+.image-box{
+    position:relative;
+    width:520px;
+}
+
+.image-box img{
+    width:100%;
+    border-radius:2px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Green Quote Circle */
+
+.quote-circle{
+    position:absolute;
+    top:-28px;
+    left:-28px;
+    width:85px;
+    height:85px;
+    background:#00d084;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:38px;
+    font-weight:bold;
+    z-index:10;
+}
+/* Right Content */
+
+.content-box{
+    max-width:500px;
+}
+
+.content-box h1{
+    font-size:56px;
+    line-height:1.2;
+    color:#15233b;
+    margin-bottom:30px;
+    font-weight:700;
+}
+
+.content-box p{
+    font-size:18px;
+    line-height:1.9;
+    color:#777;
+    margin-bottom:35px;
+}
+
+.content-box strong{
+    color:#222;
+}
+
+/* Author */
+
+.author{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.author img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+}
+  .foot-img{
+  position: relative;
+  background: url("https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/services-title-img-1.jpg");
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+.foot-img::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.foot-img > *{
+  position: relative;
+  z-index: 1;
+}
+
+.footer-logo{
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-text{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-icons{
+  display: flex;
+  gap: 15px;
+}
+
+.footer-icons i{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-icons i:hover{
+  background: black;
+  color: white;
+}
+    .small-title{
+      color:#00d084;
+      font-size:28px;
+      font-family:cursive;
+      margin-bottom:15px;
+      font-weight:500;
+    }
+
+    .main-title{
+      color:#fff;
+      font-size:64px;
+      line-height:1.2;
+      font-weight:700;
+      max-width:900px;
+      margin-bottom:50px;
+    }
+
+    .subscribe-box{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    .subscribe-box input{
+      width:100px;
+      height:72px;
+      border:none;
+      outline:none;
+      border-radius:40px;
+      background:#0d1f3c;
+      padding:0 35px;
+      color:#fff;
+      font-size:15px;
+    }
+
+    .subscribe-box input::placeholder{
+      color:#cfcfcf;
+    }
+
+    .subscribe-box button{
+      width:100px;
+      height:72px;
+      border:none;
+      border-radius:40px;
+      background:#00d96f;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .subscribe-box button:hover{
+      transform:translateY(-3px);
+      background:#00c964;
+    }   
+
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+  <header>
+     <img src="https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/logo.png">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a class="aboutbutton" href="about1.html">About</a></li>
+        <li><a class="servicebutton" href="service1.html">Services</a></li>
+        <li><a class="blogbutton" href="blog1.html">Blog</a></li>
+        <li><a class="pricingbutton" href="pricing1.html">Pricing</a></li>
+        <li><a class="contactbutton" href="contact1.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="social-icons">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+  </header>
+  <section class="hero">
+ <div class="hero-content">
+      <h1>Shared <br>workspace</h1>
+      <button>Pick your desk</button>
+    </div>
+  </section>
+
+  <section class="section1">
+
+    <!-- LEFT CONTENT -->
+
+    <div class="left-content">
+
+        <h1>
+            Agency by day.<br>
+            Invention by night.
+        </h1>
+
+        <p>
+            An essential aspect of creativity is not being afraid to fail.
+            <span>Design like you are absolutely right,</span>
+            then optimize like you were wrong from the start.
+            Choose What Matters To Your Business & Your Customers.
+        </p>
+
+        <!-- PROFILE -->
+
+        <div class="profile">
+
+            <img src="https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/single-img-2.png" alt="profile">
+        </div>
+    </div>
+    <!-- RIGHT IMAGE -->
+    <div class="right-image">
+        <!-- GREEN ICON -->
+        <div class="green-icon">
+        </div>
+        <!-- MAIN IMAGE -->
+        <img src="https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/single-img-1.jpg"
+        alt="woman">
+        <!-- DESIGN -->
+        <div class="design"></div>
+    </div>
+
+</section>
+
+ <section class="brand-section">
+
+    <!-- Left Image -->
+    <div class="image-box">
+      <img src="https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/about-single-img-1-700x557.jpg" alt="person">
+    </div>
+
+    <!-- Right Content -->
+    <div class="content-box">
+
+      <h1>
+        Brands with purpose and <br>
+        passion.
+      </h1>
+
+      <p>
+        An essential aspect of creativity is not being afraid to fail.
+        <strong>Design like you are absolutely right,</strong>
+        then optimize like you were wrong from the start.
+        Choose What Matters To Your Business & Your Customers.
+      </p>
+
+      <div class="author">
+
+        <img src="https://bridge256.qodeinteractive.com/wp-content/uploads/2019/09/about-single-img-3.png" alt="author">
+      </div>
+
+    </div>
+ </section>
+<footer class="foot-img">
+
+  <h1 class="footer-logo">bridge</h1>
+ <div class="subscribe-box">
+      <input type="email" placeholder="Email Address">
+      <button>Subscribe</button>
+    </div>
+    <br>
+
+  <p class="footer-text">
+    © Copyright Qode Interactive — All Rights Reserved <br>
+    Proudly Made For You.
+  </p>
+
+  <div class="footer-icons">
+    <i class="fa-brands fa-facebook-f"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-instagram"></i>
+  </div>
+
+</footer>
+
+   
+  </section>
+</body>
+</html>
