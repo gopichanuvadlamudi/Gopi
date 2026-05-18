@@ -479,6 +479,27 @@ body{
         opacity:1.6;
     }
 }
+/* MEDIA QUERIES */
+
+    @media(max-width:992px){
+
+      body{
+        padding:20px;
+      }
+
+      .car-card{
+        min-width:260px;
+      }
+
+      .car-content h3{
+        font-size:22px;
+      }
+
+      .price{
+        font-size:18px;
+      }
+    }
+
 .about{
     width:100%;
     min-height:100vh;
