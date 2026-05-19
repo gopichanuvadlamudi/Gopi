@@ -305,25 +305,31 @@ body{
     }
 }
 /* =========================
-   SINGLE ABOUT SECTION
+   SKEW ANIMATION EFFECTS
 ========================= */
+
+/* SECTION */
+
 .top{
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#050505;
+    overflow:hidden;
+    padding:50px;
 }
-.top-badge{
-    height: auto;
-}
+
+/* MAIN BOX */
+
 .about-box{
     width:100%;
-    height: 120vh;
+    height:auto;
 
     position:relative;
 
-    padding:60px;
+    padding:80px 60px;
 
     border-radius:35px;
 
@@ -339,17 +345,64 @@ body{
 
     backdrop-filter:blur(15px);
 
-    animation:boxFade 1.5s ease;
+    transform:skewY(-2deg);
+
+    animation:
+    skewBox 5s infinite alternate ease-in-out,
+    glowBox 5s infinite alternate;
 }
 
-/* BACKGROUND LIGHT */
+/* =========================
+   BOX SKEW ANIMATION
+========================= */
+
+@keyframes skewBox{
+
+    0%{
+        transform:
+        skewY(-2deg)
+        translateY(0px);
+    }
+
+    50%{
+        transform:
+        skewY(2deg)
+        translateY(-10px);
+    }
+
+    100%{
+        transform:
+        skewY(-2deg)
+        translateY(0px);
+    }
+}
+
+/* GLOW EFFECT */
+
+@keyframes glowBox{
+
+    0%{
+        box-shadow:
+        0 0 10px rgba(255,60,0,0.2);
+    }
+
+    100%{
+        box-shadow:
+        0 0 40px rgba(255,60,0,0.5),
+        0 0 80px rgba(255,60,0,0.3);
+    }
+}
+
+/* =========================
+   BACKGROUND LIGHTS
+========================= */
 
 .about-box::before{
     content:"";
     position:absolute;
 
-    width:400px;
-    height:400px;
+    width:420px;
+    height:420px;
 
     background:rgba(255,0,90,0.18);
 
@@ -360,7 +413,9 @@ body{
     top:-120px;
     left:-120px;
 
-    animation:moveLight 8s infinite alternate ease-in-out;
+    animation:
+    moveLight 8s infinite alternate ease-in-out,
+    skewLight 5s infinite alternate;
 }
 
 .about-box::after{
@@ -379,10 +434,70 @@ body{
     bottom:-120px;
     right:-120px;
 
-    animation:moveLight2 10s infinite alternate ease-in-out;
+    animation:
+    moveLight2 10s infinite alternate ease-in-out,
+    skewLight2 6s infinite alternate;
 }
 
-/* TOP BADGE */
+/* LIGHT MOVEMENT */
+
+@keyframes moveLight{
+
+    0%{
+        transform:
+        translateX(0px)
+        translateY(0px);
+    }
+
+    100%{
+        transform:
+        translateX(100px)
+        translateY(50px);
+    }
+}
+
+@keyframes moveLight2{
+
+    0%{
+        transform:
+        translateX(0px)
+        translateY(0px);
+    }
+
+    100%{
+        transform:
+        translateX(-100px)
+        translateY(-60px);
+    }
+}
+
+/* SKEW LIGHT */
+
+@keyframes skewLight{
+
+    0%{
+        transform:skewX(0deg);
+    }
+
+    100%{
+        transform:skewX(12deg);
+    }
+}
+
+@keyframes skewLight2{
+
+    0%{
+        transform:skewY(0deg);
+    }
+
+    100%{
+        transform:skewY(12deg);
+    }
+}
+
+/* =========================
+   TOP BADGE
+========================= */
 
 .top-badge{
     position:absolute;
@@ -406,7 +521,37 @@ body{
 
     z-index:2;
 
-    animation:badgeGlow 3s infinite alternate;
+    animation:
+    badgeFloat 4s infinite ease-in-out,
+    badgeSkew 5s infinite alternate;
+}
+
+/* BADGE ANIMATION */
+
+@keyframes badgeFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes badgeSkew{
+
+    0%{
+        transform:skewX(0deg);
+    }
+
+    100%{
+        transform:skewX(-10deg);
+    }
 }
 
 /* BADGE IMAGE */
@@ -414,9 +559,18 @@ body{
 .top-badge img{
     width:40px;
     height:40px;
+
+    animation:rotateIcon 5s linear infinite;
 }
 
-/* BADGE TEXT */
+@keyframes rotateIcon{
+
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* TEXT */
 
 .top-badge span{
     color:white;
@@ -424,7 +578,9 @@ body{
     letter-spacing:1px;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
 
 .content{
     position:relative;
@@ -433,6 +589,8 @@ body{
     text-align:center;
 
     margin-top:60px;
+
+    transform:skewY(2deg);
 }
 
 /* SMALL TITLE */
@@ -442,21 +600,45 @@ body{
 
     text-transform:uppercase;
 
-    letter-spacing:5px;
+    letter-spacing:6px;
 
     font-size:15px;
 
-    animation:fadeDown 1.5s ease;
+    display:block;
+
+    animation:
+    textSlide 2s ease,
+    glowText 3s infinite alternate;
 }
 
 /* MAIN TITLE */
 
 .content h1{
-    font-size:65px;
+    font-size:70px;
 
     margin-top:20px;
 
-    animation:fadeUp 1.8s ease;
+    color:white;
+
+    animation:
+    titleSkew 3s infinite alternate ease-in-out;
+}
+
+/* TITLE SKEW */
+
+@keyframes titleSkew{
+
+    0%{
+        transform:
+        skewX(0deg)
+        scale(1);
+    }
+
+    100%{
+        transform:
+        skewX(-8deg)
+        scale(1.02);
+    }
 }
 
 /* DESCRIPTION */
@@ -475,18 +657,20 @@ body{
     animation:fadeText 2s ease;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 .btn2{
     display:inline-block;
 
     margin-top:20px;
 
-    padding:15px 40px;
+    padding:16px 42px;
 
     border-radius:50px;
 
-    background: #ff3c00;
+    background:#ff3c00;
 
     color:white;
 
@@ -494,56 +678,98 @@ body{
 
     transition:0.5s;
 
-    animation:zoomIn 2s ease;
+    font-weight:bold;
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:
+    buttonSkew 3s infinite alternate ease-in-out;
+}
+
+/* BUTTON SKEW */
+
+@keyframes buttonSkew{
+
+    0%{
+        transform:skewX(0deg);
+    }
+
+    100%{
+        transform:skewX(-10deg);
+    }
+}
+
+/* BUTTON SHINE */
+
+.btn2::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(255,255,255,0.3);
+
+    transform:skewX(30deg);
+
+    transition:0.8s;
+}
+
+.btn2:hover::before{
+    left:120%;
 }
 
 .btn2:hover{
     background:white;
     color:black;
 
-    transform:translateY(-5px);
+    transform:
+    skewX(-10deg)
+    translateY(-5px);
+
+    box-shadow:
+    0 0 20px #ff3c00,
+    0 0 40px #ff3c00;
 }
 
 /* =========================
-   ANIMATIONS
+   TEXT EFFECTS
 ========================= */
 
-@keyframes boxFade{
+@keyframes textSlide{
 
     from{
         opacity:0;
-        transform:translateY(80px);
+        transform:
+        translateY(-40px)
+        skewX(15deg);
     }
 
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:
+        translateY(0px)
+        skewX(0deg);
     }
 }
 
-@keyframes fadeDown{
+@keyframes glowText{
 
-    from{
-        opacity:0;
-        transform:translateY(-60px);
+    0%{
+        text-shadow:0 0 10px #ff3c00;
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(100px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
+    100%{
+        text-shadow:
+        0 0 20px #ff3c00,
+        0 0 40px #ff3c00;
     }
 }
 
@@ -551,62 +777,84 @@ body{
 
     from{
         opacity:0;
+        transform:translateY(30px);
     }
 
     to{
         opacity:1;
+        transform:translateY(0px);
     }
 }
 
-@keyframes zoomIn{
+/* =========================
+   TABLET
+========================= */
 
-    from{
-        opacity:0;
-        transform:scale(0.5);
+@media(max-width:992px){
+
+    .content h1{
+        font-size:52px;
     }
 
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-/* BADGE GLOW */
-
-@keyframes badgeGlow{
-
-    0%{
-        box-shadow:0 0 10px rgba(228, 9, 9, 0.4);
-    }
-
-    100%{
-        box-shadow:0 0 25px rgba(146, 2, 2, 0.9);
+    .content p{
+        font-size:16px;
     }
 }
 
-/* LIGHT ANIMATION */
+/* =========================
+   MOBILE
+========================= */
 
-@keyframes moveLight{
+@media(max-width:768px){
 
-    0%{
-        transform:translateX(0);
+    .top{
+        padding:20px;
     }
 
-    100%{
-        transform:translateX(150px);
+    .about-box{
+        padding:70px 25px;
+    }
+
+    .content h1{
+        font-size:38px;
+    }
+
+    .content p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .top-badge{
+        top:15px;
+        left:15px;
+        padding:10px 15px;
+    }
+
+    .btn2{
+        padding:14px 30px;
     }
 }
 
-@keyframes moveLight2{
+/* =========================
+   SMALL MOBILE
+========================= */
 
-    0%{
-        transform:translateY(0);
+@media(max-width:480px){
+
+    .content h1{
+        font-size:30px;
     }
 
-    100%{
-        transform:translateY(-150px);
+    .content small{
+        letter-spacing:3px;
+        font-size:12px;
+    }
+
+    .btn2{
+        font-size:14px;
     }
 }
+
 
 /* =========================
    MEDIA QUERIES
@@ -1348,7 +1596,7 @@ form textarea{
 }
 
 footer{
-    background:#fff;
+    background:black;
     color: #fff;
     padding:30px;
     text-align:center;
