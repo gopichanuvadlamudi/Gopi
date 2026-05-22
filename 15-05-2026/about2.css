@@ -2,9 +2,8 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-    scroll-behavior:smooth;
 }
+
 
 body{
     background:#0f0f0f;
@@ -67,7 +66,7 @@ body{
 }
 
 .btn:hover{
-    background:#ff5f2e;
+    background:#ff3c00;
     transform:translateY(-5px) rotate(360deg);
 }
 .social-icons{
@@ -80,8 +79,8 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#ff5f2e;
-    color:#fff;
+    background:#ff3c00;
+    color:white;
     border-radius:50%;
     cursor:pointer;
     transition:0.5s;
@@ -149,7 +148,7 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
-    color:white;
+    color:rgb(247, 96, 8);
     padding:20px;
 }
 
@@ -262,6 +261,16 @@ body{
 }
 
 /* RESPONSIVE */
+@media(max-width:1200px){
+
+    .content h1{
+        font-size:75px;
+    }
+
+    .content p{
+        font-size:20px;
+    }
+}
 
 @media(max-width:992px){
 
@@ -287,21 +296,6 @@ body{
     .btn{
         padding:14px 35px;
         font-size:16px;
-    }
-}
-
-@media(max-width:480px){
-
-    .content span{
-        font-size:14px;
-    }
-
-    .content h1{
-        font-size:32px;
-    }
-
-    .content p{
-        font-size:14px;
     }
 }
 /* =========================
@@ -345,7 +339,7 @@ body{
 
     backdrop-filter:blur(15px);
 
-    transform:skewY(-2deg);
+    transform:skewY(0deg);
 
     animation:
     skewBox 5s infinite alternate ease-in-out,
@@ -355,27 +349,24 @@ body{
 /* =========================
    BOX SKEW ANIMATION
 ========================= */
-
 @keyframes skewBox{
 
-    0%{
-        transform:
-        skewY(-2deg)
-        translateY(0px);
-    }
-
-    50%{
+  
+     50%{
         transform:
         skewY(2deg)
-        translateY(-10px);
-    }
-
-    100%{
+       
+    }  
+ 100%{
         transform:
         skewY(-2deg)
-        translateY(0px);
+    
     }
+   
 }
+
+
+   
 
 /* GLOW EFFECT */
 
@@ -392,6 +383,7 @@ body{
         0 0 80px rgba(255,60,0,0.3);
     }
 }
+
 
 /* =========================
    BACKGROUND LIGHTS
@@ -439,61 +431,7 @@ body{
     skewLight2 6s infinite alternate;
 }
 
-/* LIGHT MOVEMENT */
 
-@keyframes moveLight{
-
-    0%{
-        transform:
-        translateX(0px)
-        translateY(0px);
-    }
-
-    100%{
-        transform:
-        translateX(100px)
-        translateY(50px);
-    }
-}
-
-@keyframes moveLight2{
-
-    0%{
-        transform:
-        translateX(0px)
-        translateY(0px);
-    }
-
-    100%{
-        transform:
-        translateX(-100px)
-        translateY(-60px);
-    }
-}
-
-/* SKEW LIGHT */
-
-@keyframes skewLight{
-
-    0%{
-        transform:skewX(0deg);
-    }
-
-    100%{
-        transform:skewX(12deg);
-    }
-}
-
-@keyframes skewLight2{
-
-    0%{
-        transform:skewY(0deg);
-    }
-
-    100%{
-        transform:skewY(12deg);
-    }
-}
 
 /* =========================
    TOP BADGE
@@ -525,35 +463,6 @@ body{
     badgeFloat 4s infinite ease-in-out,
     badgeSkew 5s infinite alternate;
 }
-
-/* BADGE ANIMATION */
-
-@keyframes badgeFloat{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-@keyframes badgeSkew{
-
-    0%{
-        transform:skewX(0deg);
-    }
-
-    100%{
-        transform:skewX(-10deg);
-    }
-}
-
 /* BADGE IMAGE */
 
 .top-badge img{
@@ -624,22 +533,6 @@ body{
     titleSkew 3s infinite alternate ease-in-out;
 }
 
-/* TITLE SKEW */
-
-@keyframes titleSkew{
-
-    0%{
-        transform:
-        skewX(0deg)
-        scale(1);
-    }
-
-    100%{
-        transform:
-        skewX(-8deg)
-        scale(1.02);
-    }
-}
 
 /* DESCRIPTION */
 
@@ -739,50 +632,14 @@ body{
     0 0 40px #ff3c00;
 }
 
-/* =========================
-   TEXT EFFECTS
-========================= */
+@media(max-width:1200px){
 
-@keyframes textSlide{
-
-    from{
-        opacity:0;
-        transform:
-        translateY(-40px)
-        skewX(15deg);
+    .content h1{
+        font-size:80px;
     }
 
-    to{
-        opacity:1;
-        transform:
-        translateY(0px)
-        skewX(0deg);
-    }
-}
-
-@keyframes glowText{
-
-    0%{
-        text-shadow:0 0 10px #ff3c00;
-    }
-
-    100%{
-        text-shadow:
-        0 0 20px #ff3c00,
-        0 0 40px #ff3c00;
-    }
-}
-
-@keyframes fadeText{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0px);
+    .content p{
+        font-size:20px;
     }
 }
 
@@ -832,96 +689,6 @@ body{
 
     .btn2{
         padding:14px 30px;
-    }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media(max-width:480px){
-
-    .content h1{
-        font-size:30px;
-    }
-
-    .content small{
-        letter-spacing:3px;
-        font-size:12px;
-    }
-
-    .btn2{
-        font-size:14px;
-    }
-}
-
-
-/* =========================
-   MEDIA QUERIES
-========================= */
-
-@media(max-width:992px){
-
-    .content h1{
-        font-size:48px;
-    }
-
-    .content p{
-        font-size:16px;
-    }
-}
-
-@media(max-width:768px){
-
-    .about-box{
-        padding:40px 25px;
-    }
-
-    .content h1{
-        font-size:36px;
-    }
-
-    .content p{
-        font-size:15px;
-        line-height:1.8;
-    }
-
-    .top-badge{
-        padding:10px 16px;
-    }
-
-    .top-badge img{
-        width:32px;
-        height:32px;
-    }
-}
-
-@media(max-width:480px){
-
-    .content h1{
-        font-size:28px;
-    }
-
-    .content small{
-        font-size:12px;
-    }
-
-    .content p{
-        font-size:14px;
-    }
-
-    .btn2{
-        padding:12px 28px;
-        font-size:14px;
-    }
-
-    .top-badge{
-        top:15px;
-        left:15px;
-    }
-
-    .top-badge span{
-        font-size:12px;
     }
 }
 /* SECTION */
@@ -1063,33 +830,6 @@ body{
     background:linear-gradient(to right,#00ff99,#00d4ff);
 }
 
-/* TITLE ANIMATION */
-@keyframes titleMove{
-    from{
-        opacity:0;
-        transform:translateY(-80px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* CARD ENTRY */
-@keyframes cardEntry{
-    from{
-        opacity:0;
-        transform:
-        translateY(80px)
-        skewY(-10deg);
-    }
-    to{
-        opacity:1;
-        transform:
-        translateY(0)
-        skewY(-4deg);
-    }
-}
 
 /* PROGRESS ANIMATION */
 @keyframes loadBar{
@@ -1097,7 +837,36 @@ body{
         width:0;
     }
 }
+/* Laptop*/
+@media(max-width:1220px){
 
+    .main-title{
+        font-size:54px;
+    }
+
+    .performance-card{
+        padding:80px 40px;
+    }
+
+    .performance-card h2{
+        font-size:28px;
+    }
+}
+/* TABLET*/
+@media(max-width:992px){
+
+    .main-title{
+        font-size:45px;
+    }
+
+    .performance-card{
+        padding:50px 30px;
+    }
+
+    .performance-card h2{
+        font-size:26px;
+    }
+}
 /* MOBILE */
 @media(max-width:768px){
 
@@ -1114,23 +883,6 @@ body{
     }
 }
 
-/* EXTRA SMALL */
-@media(max-width:480px){
-
-    .main-title{
-        font-size:32px;
-    }
-
-    .performance-card{
-        transform:none;
-    }
-
-    .performance-card:hover{
-        transform:
-        translateY(-10px)
-        scale(1.03);
-    }
-}
 /* SECTION */
 .team-section{
     width:100%;
@@ -1185,7 +937,7 @@ body{
 
 /* ROTATE EFFECT */
 .team-card:hover .card-inner{
-    transform:rotateY(180deg);
+    transform:rotateY(360deg);
 }
 
 /* FRONT & BACK */
@@ -1261,7 +1013,7 @@ body{
 .social-icons i{
     width:45px;
     height:45px;
-    background:#ff9966;
+    background:#ff3c00;
     border-radius:50%;
     display:flex;
     justify-content:center;
@@ -1321,33 +1073,6 @@ body{
     }
 }
 
-/* SMALL MOBILE */
-@media(max-width:480px){
-
-    .section-title{
-        font-size:34px;
-    }
-
-    .team-card{
-        height:420px;
-    }
-
-    .card-back{
-        padding:25px;
-    }
-
-    .card-back h2{
-        font-size:24px;
-    }
-
-    .card-back h3{
-        font-size:18px;
-    }
-
-    .card-back p{
-        font-size:14px;
-    }
-}
 /* BACKGROUND LIGHTS */
 
 .review-section::before{
@@ -1624,39 +1349,6 @@ body{
 
     .review-card{
         padding:28px;
-    }
-}
-
-@media(max-width:480px){
-
-    .review-section{
-        padding:70px 5%;
-    }
-
-    .review-title h1{
-        font-size:28px;
-    }
-
-    .review-title small{
-        font-size:12px;
-    }
-
-    .customer img{
-        width:60px;
-        height:60px;
-    }
-
-    .customer-info h2{
-        font-size:20px;
-    }
-
-    .review-card p{
-        font-size:14px;
-        line-height:1.8;
-    }
-
-    .stars i{
-        font-size:16px;
     }
 }
 .contact{

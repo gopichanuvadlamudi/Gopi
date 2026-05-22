@@ -232,15 +232,7 @@
       padding-bottom:10px;
     }
 
-    .car-container::-webkit-scrollbar{
-      height:8px;
-    }
-
-    .car-container::-webkit-scrollbar-thumb{
-      background:#ff3c00;
-      border-radius:20px;
-    }
-
+    
     /* CARD */
 
     .car-card{
@@ -256,7 +248,7 @@
     }
 
     .car-card:hover{
-      transform:translateY(-10px) scale(1.02);
+         transform:translateY(-12px) scale(1.6);
       box-shadow:0 10px 30px rgba(0,0,0,0.15);
     }
 
@@ -338,28 +330,38 @@
 
     /* ANIMATIONS */
 
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(40px);
+    
+
+    @keyframes floatCar{
+    
+       0%{
+        transform:translateY(0px);
       }
-      to{
-        opacity:1;
-        transform:translateY(0);
+       50%{
+        transform:translateY(-18px);
+       }
+    
+    }
+    @media(max-width:1400px){
+
+      body{
+        padding:20px;
+      }
+
+      .car-card{
+        min-width:260px;
+      }
+
+      .car-content h3{
+        font-size:22px;
+      }
+
+      .price{
+        font-size:18px;
       }
     }
 
-    @keyframes floatCar{
-      0%{
-        transform:translateY(0px);
-      }
-      50%{
-        transform:translateY(-8px);
-      }
-      100%{
-        transform:translateY(0px);
-      }
-    }
+
 
     /* MEDIA QUERIES */
 
@@ -397,37 +399,6 @@
         padding:12px;
       }
     }
-
-    @media(max-width:480px){
-
-      body{
-        padding:10px;
-      }
-
-      .electric-section{
-        padding:15px;
-      }
-
-      .car-card{
-        min-width:100%;
-      }
-
-      .electric-section h2{
-        font-size:22px;
-      }
-
-      .car-content h3{
-        font-size:20px;
-      }
-
-      .price{
-        font-size:16px;
-      }
-
-      .view-all{
-        font-size:16px;
-      }
-    }
    .petrol-section{
   background:black;
   margin-top:50px;
@@ -454,14 +425,6 @@
   padding-bottom:10px;
 }
 
-.petrol-container::-webkit-scrollbar{
-  height:8px;
-}
-
-.petrol-container::-webkit-scrollbar-thumb{
-  background:#ff3c00;
-  border-radius:20px;
-}
 
 /* CARD */
 
@@ -587,6 +550,22 @@
 /* =========================
    MEDIA QUERIES
 ========================= */
+@media(max-width:1200px){
+
+  .petrol-card{
+    min-width:260px;
+  }
+
+  .petrol-content h3{
+    font-size:22px;
+  }
+
+  .petrol-price{
+    font-size:18px;
+  }
+
+}
+
 
 @media(max-width:992px){
 
@@ -617,34 +596,6 @@
   .petrol-btn{
     font-size:16px;
     padding:12px;
-  }
-
-}
-
-@media(max-width:480px){
-
-  .petrol-section{
-    padding:15px;
-  }
-
-  .petrol-card{
-    min-width:100%;
-  }
-
-  .petrol-section h2{
-    font-size:22px;
-  }
-
-  .petrol-content h3{
-    font-size:20px;
-  }
-
-  .petrol-price{
-    font-size:16px;
-  }
-
-  .view-petrol{
-    font-size:16px;
   }
 
 }
@@ -842,6 +793,13 @@
 }
 
 /* RESPONSIVE */
+@media(max-width:1200px){
+
+    .title h1{
+        font-size:55px;
+    }
+}
+
 
 @media(max-width:992px){
 
@@ -858,21 +816,6 @@
 
     .car-content h2{
         font-size:24px;
-    }
-}
-
-@media(max-width:480px){
-
-    .diesel-section{
-        padding:60px 5%;
-    }
-
-    .title h1{
-        font-size:28px;
-    }
-
-    .car-content p{
-        font-size:14px;
     }
 }
 .sports-section{
@@ -1074,6 +1017,44 @@
 }
 
 /* RESPONSIVE */
+@media(max-width:1200px){
+
+    .sponsor-title h1{
+        font-size:54px;
+    }
+
+    .logo-box{
+        width:220px;
+        height:180px;
+    }
+
+    .logo-box img{
+        width:180px;
+    }
+
+    .marquee-content{
+        gap:55px;
+    }
+}
+@media(max-width:992px){
+
+    .sponsor-title h1{
+        font-size:45px;
+    }
+
+    .logo-box{
+        width:120px;
+        height:150px;
+    }
+
+    .logo-box img{
+        width:140px;
+    }
+
+    .marquee-content{
+        gap:40px;
+    }
+}
 
 @media(max-width:768px){
 
@@ -1092,22 +1073,6 @@
 
     .marquee-content{
         gap:35px;
-    }
-}
-
-@media(max-width:480px){
-
-    .sponsor-title h1{
-        font-size:28px;
-    }
-
-    .logo-box{
-        width:140px;
-        height:90px;
-    }
-
-    .logo-box img{
-        width:90px;
     }
 }
 

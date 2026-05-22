@@ -89,265 +89,190 @@ body{
 .social-icons i:hover{
     transform:translateY(30px) rotate(180deg);
 }
- .image{
-    height: 100vh;
-    width: 100%;
- }
- .image img{
-    width: 100%;
-    height: 100%;
- 
- 
-  /* Animation */
-    animation:
-    zoomEffect 8s infinite alternate,
-    floatImage 5s infinite ease-in-out;
-}
-
 /* =========================
-   OVERLAY EFFECT
-========================= */
+       IMAGE SECTION
+    ========================= */
 
-.image::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.4));
-    z-index:1;
-}
+    .image{
+      width:100%;
+      height:140vh;
+      overflow:hidden;
+      position:relative;
+      animation:bgFade 2s ease;
+    }
 
-/* =========================
-   ANIMATIONS
-========================= */
+    /* IMAGE */
 
-/* Page Fade */
+    .image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
 
-@keyframes bgFade{
+      animation:
+      zoomEffect 8s infinite alternate ease-in-out,
+      floatImage 5s infinite ease-in-out;
+    }
 
-    from{
+    /* =========================
+       OVERLAY EFFECT
+    ========================= */
+
+    .image::before{
+      content:"";
+      position:absolute;
+      inset:0;
+
+      background:linear-gradient(
+      rgba(0,0,0,0.2),
+      rgba(0,0,0,0.5));
+
+      z-index:1;
+    }
+
+    
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes bgFade{
+
+      from{
         opacity:0;
-    }
+      }
 
-    to{
+      to{
         opacity:1;
-    }
-}
-
-/* Zoom Animation */
-
-@keyframes zoomEffect{
-
-    0%{
-        transform:scale(4);
+      }
     }
 
-    100%{
-        transform:scale(3.08);
-    }
-}
+    /* ZOOM EFFECT */
 
-/* Floating Animation */
+    @keyframes zoomEffect{
 
-@keyframes floatImage{
+      0%{
+        transform:scale(1);
+      }
 
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-8px);
+      100%{
+        transform:scale(1.08);
+      }
     }
 
-    100%{
-        transform:translateY(0px);
-    }
-}
-/* =========================================
-   RESPONSIVE MEDIA QUERIES
-========================================= */
+    /* FLOAT EFFECT */
 
+    @keyframes floatImage{
 
-/* =========================================
-   LARGE DESKTOP VIEW
-   1400px and above
-========================================= */
+      0%{
+        transform:translateY(0px) scale(1);
+      }
 
-@media (min-width:1400px){
+      50%{
+        transform:translateY(-10px) scale(1.04);
+      }
 
-    .image{
-        width:100%;
-        height:100vh;
-        overflow:hidden;
-        position:relative;
+      100%{
+        transform:translateY(0px) scale(1.08);
+      }
     }
 
-    .image img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transform:scale(1.1);
-    }
-}
+    /* TEXT ANIMATION */
 
+    @keyframes slideDown{
 
-/* =========================================
-   LAPTOP VIEW
-   1024px to 1399px
-========================================= */
+      from{
+        opacity:0;
+        transform:translateY(-80px);
+      }
 
-@media (max-width:1399px){
-
-    .image{
-        width:100%;
-        height:100vh;
-        overflow:hidden;
-        position:relative;
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
-    .image img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transform:scale(1.05);
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(50px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
-}
+    /* =========================
+       LAPTOP VIEW
+    ========================= */
+
+    @media (max-width:1200px){
+
+      .image{
+        height:120vh;
+      }
+    }
 
 
-/* =========================================
-   TABLET VIEW
-   768px to 1023px
-========================================= */
 
-@media (max-width:1023px){
+    /* =========================
+       TABLET VIEW
+    ========================= */
 
-    .image{
-        width:100%;
+    @media (max-width:992px){
+
+      .image{
         height:80vh;
-        overflow:hidden;
-        position:relative;
+      }
     }
 
-    .image img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transform:scale(1);
-    }
+    /* =========================
+       MOBILE VIEW
+    ========================= */
 
-    /* Reduce Animation Speed */
+    @media (max-width:768px){
 
-    .image img{
-        animation:
-        zoomEffectTablet 6s infinite alternate,
-        floatTablet 4s infinite ease-in-out;
-    }
-
-    @keyframes zoomEffectTablet{
-
-        0%{
-            transform:scale(1);
-        }
-
-        100%{
-            transform:scale(1.08);
-        }
-    }
-
-    @keyframes floatTablet{
-
-        0%{
-            transform:translateY(0px);
-        }
-
-        50%{
-            transform:translateY(-5px);
-        }
-
-        100%{
-            transform:translateY(0px);
-        }
-    }
-}
-
-
-/* =========================================
-   MOBILE VIEW
-   767px and below
-========================================= */
-
-@media (max-width:767px){
-
-    .image{
-        width:100%;
+      .image{
         height:60vh;
-        overflow:hidden;
-        position:relative;
+      }
     }
 
-    .image img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        transform:scale(1);
-    }
-
-    /* Smaller Animation */
-
-    .image img{
+      .image img{
         animation:
-        zoomEffectMobile 5s infinite alternate,
-        floatMobile 3s infinite ease-in-out;
-    }
+        zoomMobile 6s infinite alternate ease-in-out,
+        floatMobile 4s infinite ease-in-out;
+      }
 
-    @keyframes zoomEffectMobile{
+      @keyframes zoomMobile{
 
         0%{
-            transform:scale(1);
+          transform:scale(1);
         }
 
         100%{
-            transform:scale(1.05);
+          transform:scale(1.05);
         }
-    }
+      }
 
-    @keyframes floatMobile{
+      @keyframes floatMobile{
 
         0%{
-            transform:translateY(0px);
+          transform:translateY(0px) scale(1);
         }
 
         50%{
-            transform:translateY(-3px);
+          transform:translateY(-5px) scale(1.02);
         }
 
         100%{
-            transform:translateY(0px);
+          transform:translateY(0px) scale(1.05);
         }
-    }
-}
-
-
-/* =========================================
-   SMALL MOBILE VIEW
-   480px and below
-========================================= */
-
-@media (max-width:480px){
-
-    .image{
-        height:50vh;
-    }
-
-    .image img{
-        object-fit:cover;
-    }
-}
-
+      }
  .accessories-section{
       width:100%;
-      min-height:100vh;
+      height: 120vh;
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
@@ -500,63 +425,6 @@ body{
         transform:translateY(0px);
       }
     }
-    /* =========================
-   LARGE DESKTOP VIEW
-========================= */
-@media (min-width: 1400px){
-
-  .content{
-    max-width: 1500px;
-  }
-
-  .title{
-    font-size: 80px;
-  }
-
-  .subtitle{
-    font-size: 28px;
-  }
-
-  .cards{
-    grid-template-columns: repeat(4,1fr);
-    gap: 35px;
-  }
-
-  .card img{
-    height: 260px;
-  }
-
-  .card h2{
-    font-size: 28px;
-  }
-
-  .card p{
-    font-size: 18px;
-  }
-}
-
-
-/* =========================
-   DESKTOP VIEW
-========================= */
-@media (max-width: 1399px){
-
-  .title{
-    font-size: 65px;
-  }
-
-  .subtitle{
-    font-size: 22px;
-  }
-
-  .cards{
-    grid-template-columns: repeat(4,1fr);
-  }
-
-  .card img{
-    height: 220px;
-  }
-}
 
 
 /* =========================
@@ -698,57 +566,6 @@ body{
     font-size: 14px;
   }
 }
-
-
-/* =========================
-   SMALL MOBILE VIEW
-========================= */
-@media (max-width: 480px){
-
-  .accessories-section{
-    padding: 35px 12px;
-  }
-
-  .title{
-    font-size: 30px;
-  }
-
-  .subtitle{
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .cards{
-    gap: 18px;
-  }
-
-  .card{
-    border-radius: 14px;
-  }
-
-  .card img{
-    height: 190px;
-  }
-
-  .card-content{
-    padding: 14px;
-  }
-
-  .card h2{
-    font-size: 20px;
-  }
-
-  .card p{
-    font-size: 13px;
-  }
-
-  .btn{
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    font-size: 14px;
-  }
-}
 .services{
     padding:100px 8%;
 }
@@ -787,42 +604,6 @@ body{
     margin-bottom:15px;
 }
 /* =========================
-   LARGE DESKTOP VIEW
-========================= */
-@media (min-width: 1400px){
-
-  .services{
-    padding:120px 10%;
-  }
-
-  .services h1{
-    font-size:50px;
-  }
-
-  .service-container{
-    gap:40px;
-  }
-
-  .service-box{
-    padding:50px;
-  }
-
-  .service-box i{
-    font-size:60px;
-  }
-
-  .service-box h3{
-    font-size:28px;
-  }
-
-  .service-box p{
-    font-size:18px;
-    line-height:1.8;
-  }
-}
-
-
-/* =========================
    DESKTOP VIEW
 ========================= */
 @media (max-width: 1200px){
@@ -858,7 +639,7 @@ body{
 
 
 /* =========================
-   LAPTOP VIEW
+   TABLET VIEW
 ========================= */
 @media (max-width: 992px){
 
@@ -896,7 +677,7 @@ body{
 
 
 /* =========================
-   TABLET VIEW
+   MOBILE VIEW
 ========================= */
 @media (max-width: 768px){
 
@@ -928,43 +709,6 @@ body{
 
   .service-box p{
     font-size:14px;
-  }
-}
-
-
-/* =========================
-   MOBILE VIEW
-========================= */
-@media (max-width: 480px){
-
-  .services{
-    padding:60px 15px;
-  }
-
-  .services h1{
-    font-size:28px;
-  }
-
-  .service-container{
-    gap:18px;
-  }
-
-  .service-box{
-    padding:25px 18px;
-    border-radius:15px;
-  }
-
-  .service-box i{
-    font-size:36px;
-  }
-
-  .service-box h3{
-    font-size:19px;
-  }
-
-  .service-box p{
-    font-size:13px;
-    line-height:1.5;
   }
 }
 .contact{
