@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>4 Box Skew Animation</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#0f0f0f;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+}
+
+/* GRID */
+.container{
+    display:grid;
+    align-items: center;
+    text-align: center;
+    grid-template-columns:repeat(2,160px);
+    gap:30px;
+}
+
+/* BOX STYLE */
+.box{
+    width:160px;
+    height:160px;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    transform:skew(-50deg);
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* COLORS */
+.box1{
+    background:linear-gradient(135deg,#00b36b,#ff4b2b);
+    animation:slideRight 3s ease-in-out infinite alternate;
+}
+
+.box2{
+    background:linear-gradient(135deg,#00c6ff,#f7971e);
+    animation:rotateBox 4s linear infinite;
+}
+
+.box3{
+    background:linear-gradient(135deg,#f7971e,#00b36b);
+    animation:slideLeft 3s ease-in-out infinite alternate;
+}
+
+.box4{
+    background:linear-gradient(135deg,#0f0f0f,#ffd200);
+    animation:rotateSkew 5s linear infinite;
+}
+
+/* ANIMATIONS */
+
+/* RIGHT */
+@keyframes slideRight{
+    0%{
+        transform:translateX(0) skew(-100deg);
+    }
+    100%{
+        transform:translateX(80px) skew(10deg);
+    }
+}
+
+/* ROTATE */
+@keyframes rotateBox{
+    0%{
+        transform:rotate(0deg) skew(10deg);
+    }
+    100%{
+        transform:rotate(360deg) skew(-10deg);
+    }
+}
+
+/* LEFT */
+@keyframes slideLeft{
+    0%{
+        transform:translateX(0) skew(-10deg);
+    }
+    100%{
+        transform:translateX(-80px) skew(-10deg);
+    }
+}
+
+/* ROTATE + SKEW */
+@keyframes rotateSkew{
+    0%{
+        transform:rotate(0deg) skew(-10deg);
+    }
+   
+    100%{
+        transform:rotate(180deg) skew(-10deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- RIGHT -->
+    <div class="box box1">
+        THIS IS A RIGHT SIDE BOX
+    </div>
+
+    <!-- ROTATE -->
+    <div class="box box2">
+        THIS IS A ROTATION
+    </div>
+
+    <!-- LEFT -->
+    <div class="box box3">
+        THIS IS LEFT SIDE
+    </div>
+
+    <!-- ROTATE + SKEW -->
+    <div class="box box4">
+        THIS IS 360 DEGREE
+    </div>
+
+</div>
+
+</body>
+</html>

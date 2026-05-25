@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .body{
+            height: 120vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+            background: black;
+            overflow: hidden;
+        }
+        .container{
+             position:relative;
+             width:500px;
+             height:400px;
+             display:flex;
+             justify-content: center;
+             align-items: center;
+        }
+        .card{
+            position: absolute;
+            width:160px;
+            height:240px;
+            border-radius:18px;
+            overflow:hidden;
+             box-shadow:0 10px 25px rgba(0,0,0,0.5);
+            transition:0.2s ease;
+            cursor:pointer;
+            border:3px solid rgba(255,255,255,0.2);
+        }
+        .card img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        /* card positions */
+        .card1{
+             transform:rotate(-58deg) translateX(-250px);
+      z-index:1;
+        }
+
+        .card2{
+             transform:rotate(28deg) translateX(-250px);
+      z-index:1;
+        }
+
+        .card3{
+             transform:rotate(100deg) translateX(-150px);
+      z-index:1;
+        }
+
+        .card4{
+             transform:rotate(-100deg) translateX(-350px);
+      z-index:1;
+        }
+
+        .card5{
+             transform:rotate(-150deg) translateX(-450px);
+      z-index:1;
+        }
+
+        .card6{
+             transform:rotate(-20deg) translateX(-30px);
+      z-index:1;
+        }
+
+        .container:hover .card1{
+      transform:rotate(-58deg) translateX(-0px) translateY(-20px);
+    }
+
+    .container:hover .card2{
+      transform:rotate(-38deg) translateX(-0px) translateY(-20px);
+    }
+
+    .container:hover .card3{
+      transform:rotate(-38deg) translateX(-0px) translateY(-20px);
+    }
+
+    .container:hover .card4{
+      transform:rotate(-38deg) translateX(-0px) translateY(-20px);
+    }
+    .container:hover .card5{
+      transform:rotate(-38deg) translateX(-0px) translateY(-20px);
+    }
+ 
+    .container:hover .card6{
+      transform:rotate(-38deg) translateX(-0px) translateY(-20px);
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card card1">
+            <img src="https://www.royalchallengers.com/s3/files/styles/288_x_191_landscape/public/2026-05/J62_2240.JPG?itok=BJhsc_wD">
+        </div>
+
+         <div class="card card2">
+            <img src="https://www.royalchallengers.com/s3/files/styles/288_x_191_landscape/public/2026-05/MOH_4568.JPG?itok=360o2F4N">
+        </div>
+
+        <div class="card card3">
+            <img src="https://www.royalchallengers.com/s3/files/styles/288_x_191_landscape/public/2026-05/MOH_7020.jpg?itok=rwqSEzLm">
+        </div>
+
+        <div class="card card4">
+            <img src="https://www.royalchallengers.com/s3/files/styles/432_x_290_landscape/public/video_thumbnails/IeYIjpwKx4U.jpg?itok=N1dfRWZI">
+        </div>
+
+        <div class="card card5">
+            <img src="https://www.royalchallengers.com/s3/files/styles/432_x_290_landscape/public/video_thumbnails/OJ3E-Wubrfk.jpg?itok=YA8jlINK">
+        </div>
+
+        <div class="card card6">
+            <img src="https://www.royalchallengers.com/s3/files/styles/288_x_191_landscape/public/2026-05/CREWC_34961.jpg?itok=jnh7MmF7">
+        </div>
+    </div>
+</body>
+</html>
