@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shoe Card Border Animation</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      background:#0f0f0f;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px;
+    }
+
+    .container{
+      display:flex;
+      gap:40px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    /* ================= CARD ================= */
+
+    .shoe-card{
+      position:relative;
+      width:320px;
+      height:450px;
+      border-radius:25px;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* Animated Border */
+
+    .shoe-card::before{
+      content:"";
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:linear-gradient(
+        45deg,
+        transparent,
+        rgb(255, 0, 0),
+        rgb(0, 255, 76),
+        transparent
+      );
+
+      animation:rotate 4s linear infinite;
+    }
+
+    .shoe-card::after{
+      content:"";
+      position:absolute;
+      inset:5px;
+      background:#1a1a1a;
+      border-radius:20px;
+    }
+
+   
+
+    /* ================= CONTENT ================= */
+
+    .content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:20px;
+      color:#fff;
+    }
+
+    .content img{
+      width:220px;
+      transition:0.5s;
+      filter:drop-shadow(0 10px 20px rgba(0,0,0));
+    }
+
+    .shoe-card:hover img{
+      transform:translateY(-15px) rotate(360deg) scale(1.05);
+    }
+
+    .content h2{
+      margin-top:20px;
+      font-size:30px;
+      letter-spacing:1px;
+    }
+
+    .content p{
+      margin:15px 0;
+      color:#226d99;
+      line-height:1.5;
+      font-size:15px;
+    }
+
+    .price{
+      font-size:28px;
+      color:rgb(230, 76, 15);
+      margin-bottom:20px;
+      display:block;
+      font-weight:bold;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 30px;
+      border-radius:50px;
+      text-decoration:none;
+      color:#111;
+      background:rgb(161, 101, 12);
+      font-weight:bold;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      background:#fff;
+      transform:scale(1.1);
+      box-shadow:0 0 20px rgb(252, 104, 5);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .shoe-card{
+        width:290px;
+        height:430px;
+      }
+
+      .content img{
+        width:220px;
+      }
+
+      .content h2{
+        font-size:25px;
+      }
+
+    }
+    @media(max-width:992px){
+        .shoe-card{
+            width:350px;
+            height: 480px;
+        }
+        .content img{
+            width: 280px;
+        }
+        .content h2{
+            font-size: 32;
+        }
+    }
+
+    @media(max-width:1400px){
+        .shoe-card{
+            width:400px;
+            height: 540px;
+        }
+        .content img{
+            width: 320px;
+        }
+        .content h2{
+            font-size: 40;
+        }
+    }
+    @keyframes fadein{
+        from{
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Card 1 -->
+
+    <div class="shoe-card">
+
+      <div class="content">
+
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop"
+        alt="shoe">
+
+        <h2>Nike Air Max</h2>
+
+        <p>
+          Premium running shoes with stylish design and comfort.
+        </p>
+
+        <span class="price">$199</span>
+
+        <a href="#" class="btn">
+          Buy Now
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Card 2 -->
+
+    <div class="shoe-card">
+
+      <div class="content">
+
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1000&auto=format&fit=crop"
+        alt="shoe">
+
+        <h2>Adidas Pro</h2>
+
+        <p>
+          Lightweight sneakers with modern sporty appearance.
+        </p>
+
+        <span class="price">$149</span>
+
+        <a href="#" class="btn">
+          Buy Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

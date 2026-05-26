@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gradient Background Animation</title>
+   <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar{
+      width:100%;
+      background:#000;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:#fff;
+      font-size:28px;
+      font-weight:bold;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#fff;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:cyan;
+    }
+
+    /* Hamburger */
+
+    .hamburger{
+      display:none;
+      font-size:28px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    #menu-toggle{
+      display:none;
+    }
+    @media(max-width:768px){
+        .hamburger{
+            display: block;
+        }
+        .nav-links{
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #000;
+            flex-direction: column;
+            text-align: center;
+            display: none;
+            padding: 20px;
+        }
+        .nav-links a{
+            padding: 12px;
+            display: block;
+        }
+        menu toggle:checked ~ .nav-links{
+            display: flex;
+        }
+        .container{
+            gap: 20px;
+        }
+        .icon-box{
+            width: 90px;
+            height: 90px;
+        }
+        .icon-box{
+            font-size: 35px;
+        }
+    }
+    body{
+      height:100vh;
+
+      /* Gradient Colors */
+      background:linear-gradient(
+        -45deg,
+     red,
+        green,
+        yellow,
+        black
+      );
+
+      background-size:400% 400%;
+
+      /* Animation */
+      animation:gradientBG 8s ease infinite;
+    }
+
+    @keyframes gradientBG{
+
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+ <!-- Navbar -->
+
+  <nav class="navbar">
+
+    <div class="logo">LOGO</div>
+
+    <!-- Hamburger -->
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <!-- Nav Links -->
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+  </nav>
+
+</body>
+</html>

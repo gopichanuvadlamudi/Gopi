@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotate Z Animation</title>
+
+  <style>
+
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#333;
+      font-family:Arial, sans-serif;
+    }
+
+    .section{
+      width:200px;
+      height:200px;
+      background:#4caf50;
+      color:white;
+      display:flex;
+      justify-content:center;
+      text-align: center;
+      align-items:center;
+      font-size:25px;
+      border-radius:20px;
+
+      animation:rotateZAnim 3s infinite linear;
+    }
+
+    @keyframes rotateZAnim{
+
+      from{
+        transform:rotateZ(0deg);
+      }
+
+      to{
+        transform:rotateZ(360deg);
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="section">
+    <h1>this is cool</h1>
+  </div>
+
+</body>
+</html>

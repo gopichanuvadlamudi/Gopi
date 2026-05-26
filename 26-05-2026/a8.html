@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Animated Gradient Text</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#111;
+      overflow:hidden;
+    }
+
+    h1{
+      font-size:80px;
+      font-weight:bold;
+
+      /* Gradient Text */
+      background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff9800,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff,
+        #ff0000
+      );
+
+      background-size:400%;
+      /* Animation */
+      animation:gradientMove 6s linear infinite;
+    }
+
+    @keyframes gradientMove{
+
+      0%{
+        background-position:0%;
+      }
+
+      100%{
+        background-position:1000%;
+      }
+
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+  <h1>GOPI CHANDU</h1>
+
+</body>
+</html>
