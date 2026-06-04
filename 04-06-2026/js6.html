@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Age Checker</title>
+  </head>
+  <body>
+    <h2>Age Verification</h2>
+    <h1>Use the else if statement to specify a new condition if the first is false.</h1>
+
+    <h3>Age: <span id="age">17</span></h3>
+
+    <button onclick="eligible()">Age + 1</button>
+    <button onclick="noteligible()">Age - 1</button>
+
+    <p id="result">Below 18 - Not Eligible to Vote</p>
+
+    <script>
+      let age = 17;
+
+      function checkAge() {
+        document.getElementById("age").innerText = age;
+
+        if (age >= 18) {
+          document.getElementById("result").innerText =
+            "Above 18 - Eligible to Vote";
+        } else {
+          document.getElementById("result").innerText =
+            "Below 18 - Not Eligible to Vote";
+        }
+      }
+
+      function eligible() {
+        age++; // Increment Operator
+        checkAge();
+      }
+
+      function noteligible() {
+        age--; // Decrement Operator
+        checkAge();
+      }
+    </script>
+  </body>
+</html>
