@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Marks Calculator</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#000;
+}
+
+.container{
+    background:whitesmoke;
+    padding:30px;
+    width:600px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    border:none;
+    border-radius:5px;
+    background:rgb(10, 179, 61);
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:rgb(6, 105, 39);
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Student Progress Result</h1>
+
+    <label>Student Name:</label>
+    <input type="text" id="sname" placeholder="Enter Student Name">
+
+    <br>
+    <br>
+
+    <label>Student RollNumber</label>
+    <input type="text" id="sroll" placeholder="Enter Roll Number">
+
+    <br><br>
+
+    <label>Python Subject:</label>
+    <input type="number" id="sub1" placeholder="Enter Python Marks">
+
+    <br><br>
+
+    <label>Java Subject:</label>
+    <input type="number" id="sub2" placeholder="Enter Java Marks">
+
+    <br><br>
+
+    <label>C Subject:</label>
+    <input type="number" id="sub3" placeholder="Enter C Marks">
+
+    <br><br>
+
+    <label>C++ Subject:</label>
+    <input type="number" id="sub4" placeholder="Enter C++ Marks">
+
+    <br><br>
+
+    <label>Data Science:</label>:
+    <input type="number" id="sub5" placeholder="Enter Data Science Marks">
+
+    <br><br>
+
+    <label>JavaScript Subject:</label>
+    <input type="number" id="sub6" placeholder="Enter JavaScript Marks ">
+
+    <br><br>
+   
+
+   
+<button onclick="Marks()">Result</button>
+<p id="demo"></p>
+
+</div>
+<script>
+function Marks(){
+
+    let name = document.getElementById("sname").value;
+    let roll = document.getElementById("sroll").value;
+
+    let sub1 = Number(document.getElementById("sub1").value);
+    let sub2 = Number(document.getElementById("sub2").value);
+    let sub3 = Number(document.getElementById("sub3").value);
+    let sub4 = Number(document.getElementById("sub4").value);
+    let sub5 = Number(document.getElementById("sub5").value);
+    let sub6 = Number(document.getElementById("sub6").value);
+
+     // Arithmetic Operators
+    let total = sub1 + sub2 + sub3 + sub4 + sub5 + sub6;
+    let average = total / 6;
+
+    // Percentage
+    let Percentage=(total / 600) * 100
+
+      // Assignment Operator
+    let bonus = total;
+    bonus += 5;
+
+     // Comparison Operators
+    let greater = sub1 > sub2;
+    let leaser = sub3 < sub4;
+    let greater2 = sub5 <= sub6;
+    let notequalto = sub1 != sub6;
+    let equal = sub1 == sub2;
+
+      // Logical Operators
+    let allPass = sub1 > 35 && sub2 > 35 && sub3 > 35 && sub4 >35 && sub5 > 35 && sub6 > 35;
+
+    let Above90 = sub1 > 90 || sub2 > 90 ||  sub3 > 90 || sub4 > 90 ||  sub5 > 90 || sub6 > 90 ; 
+
+
+    // Increment & Decrement Operators
+    sub1++;
+    sub2++;
+    sub3++;
+    sub4--;
+    sub5--;
+    sub6--;
+
+      // Ternary Operator
+    let result = average <= 35 ? "Fail" : "Pass";
+
+    // Grade System
+    let grade;
+       
+    if(average >= 90){
+        grade = "A Grade";
+    }
+    else if(average >= 75){
+        grade = "B Grade";
+    }
+    else if(average >= 60){
+        grade = "C Grade";
+    }
+    else if(average >= 35){
+        grade = "D Grade";
+    }
+    else{
+        grade = "Fail";
+    }
+
+
+
+    document.getElementById("demo").innerHTML ="Student Result" +  "Student Name: " + name + "<br>" +
+    "Roll Number: " + roll + "<br><br>" +"Total Marks: " + total + "<br>"+ "percentage :" + Percentage.toFixed(2)+ "%<br>"+ "Sub1 > Sub2: " + greater + "<br>" +"Sub3 < Sub4: " + leaser + "<br>"+
+    "Sub5 <= Sub6: " + greater2 + "<br>" +"Sub1 != Sub6: " + notequalto + "<br>"+"Sub1 == Sub2: " + equal + "<br>"+"allpass Above 35: " + allPass + "<br>" +
+    "Two Subject Above 90: " + Above90 + "<br><br>"+ "Sub1 After ++ : " + sub1 + "<br>" + "Sub2 After ++ : " + sub2 + "<br>" + "Sub3 After ++ : " + sub3 + "<br>" +
+    "Sub4 After -- : " + sub4 + "<br>"+"Sub5 After -- : " + sub5 + "<br>"+"Sub6 After -- : " + sub6 + "<br>"+
+    "Result : " + result + "<br>" + "Grade : " + grade;
+
+
+
+}
+</script>
+
+
+</body>
+</html>
