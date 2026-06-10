@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const products = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Mouse", price: 500 },
+  { id: 3, name: "Keyboard", price: 1500 },
+  { id: 4, name: "Monitor", price: 12000 }
+];        
+
+ //   array containing Products
+ const productNames = products.map(product=>product.name);
+ console.log(productNames);
+
+  //   array containing Products price
+ const productPrice = products.map(product=>product.price);
+ console.log(productPrice);
+
+  //   array containing Products price increase
+ const productIncrease = products.map(product=>product.price+1000);
+ console.log(productIncrease);
+
+  //   array containing Products price more than 1000
+ const productMore = products.filter(product=>product.price>1000);
+ console.log(productMore);
+
+  //   array containing Products price less than 1000
+ const productLess = products.filter(product=>product.price<=1000);
+ console.log(productLess);
+
+ //   array containing Products find
+ const productId = products.find(product=>product.id===2);
+ console.log(productId);
+
+ //   array containing Products find name
+ const productChar = products.find(product=>product.id===4);
+ console.log(productChar);
+
+     //all Prices
+
+const totalValues = products.reduce((sum, product) => sum + product.price, 0);
+console.log(totalValues);
+
+    </script>
+</body>
+</html>

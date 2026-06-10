@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const movies = [
+  { id: 1, title: "Bahubali", rating: 9 },
+  { id: 2, title: "Pushpa", rating: 8 },
+  { id: 3, title: "RRR", rating: 10 },
+  { id: 4, title: "Salaar", rating: 7 }
+];
+    //   array containing movie titles
+ const movieTitles = movies.map(movie=>movie.title);
+ console.log(movieTitles);
+
+    //  array containg movie ratings
+  const movieRating = movies.map(movie=>movie.rating);
+ console.log(movieRating);
+
+        //   rating+1
+  const movieUpdate = movies.map(movie=>movie.rating+1);
+ console.log(movieUpdate);
+
+        //  greater than
+ const movieGreater = movies.filter(movie=>movie.rating>=8);
+ console.log(movieGreater);
+
+
+        //  Less than
+ const movieLess = movies.filter(movie=>movie.rating<9);
+ console.log(movieLess);
+
+
+            //  Id
+ const movieId = movies.find(movie=>movie.id===3);
+ console.log(movieId);
+
+
+             //  Movie Name
+ const movieName = movies.find(movie=>movie.title="pushpa");
+ console.log(movieName);
+
+ 
+          //all ratings
+const totalRatings = movies.reduce((sum, movie) => sum + movie.rating, 0);
+console.log(totalRatings);
+
+    </script>
+</body>
+</html>
