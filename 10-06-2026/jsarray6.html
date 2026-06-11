@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+          //  Create an array of movie titles in uppercase
+let cinema = "bahubali";
+let cinema1 = "akhanda";
+let cinema2 = "devara";
+let cinema3 = "peddi";
+let result1 = cinema.toUpperCase();
+let result2 = cinema1.toUpperCase();
+let result3 = cinema2.toUpperCase();
+let result4 = cinema3.toUpperCase();
+
+console.log(result1);
+console.log(result2);
+console.log(result3);
+console.log(result4);
+
+
+
+              // Create an array of product names in lowercase
+let p1 = "KEYBOARD";
+let p2 = "MOUSE";
+let p3 = "MONITOR";
+let p4 = "MOBILE";
+let result5 = p1.toLowerCase();
+let result6 = p2.toLowerCase();
+let result7 = p3.toLowerCase();
+let result8 = p4.toLowerCase();
+
+console.log(result5);
+console.log(result6);
+console.log(result7);
+console.log(result8);
+
+
+
+            // Get all movies whose title length is greater than 6
+const movies = [
+  { title: "dragon"},
+  { title: "spirit" },
+  { title: "peddi"},
+  { title: "F2"}
+];
+const movieLength = movies.filter(movie => movie.title.length >=6);
+console.log(movieLength);
+
+
+
+            //  Get all students whose names start with “R”
+const products = [
+  { name: "LAPTOP"},
+  { name: "MOUSE"},
+  { name: "KEY BOARD"},
+  { name: "MONITOR"}
+];    
+
+const result = products.filter(product => product.name.startsWith("M"));
+console.log(result);
+
+
+const cricketScores = [45, 80, 20, 100, 60];
+const studentMarks = [70, 85, 90, 65, 75];
+
+
+              //  Calculate the combined total of all cricket scores and all student marks
+const cricketTotal = cricketScores.reduce((sum, score) => sum + score, 0);
+const studentTotal = studentMarks.reduce((sum, mark) => sum + mark, 0);
+
+
+const combinedTotal = cricketTotal + studentTotal;
+console.log(combinedTotal);
+
+
+                  //  Find the highest cricket score
+const highestScore=Math.max(...cricketScores);
+console.log(highestScore);
+
+
+            // Find the student with the highest marks
+const highestMarks=Math.max(...studentMarks);
+console.log(highestMarks);
+
+
+
+  const pictures = [
+  { id: 1, title: "Bahubali", rating: 9 },
+  { id: 2, title: "Pushpa", rating: 8 },
+  { id: 3, title: "RRR", rating: 10 },
+  { id: 4, title: "Salaar", rating: 7 }
+];
+
+
+              //  Find the movie with the highest rating
+const movieRating =Math.max(...pictures.map(movie=>movie.rating));
+ console.log(movieRating);
+
+
+ const product = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Mouse", price: 500 },
+  { id: 3, name: "Keyboard", price: 1500 },
+  { id: 4, name: "Monitor", price: 12000 }
+];  
+         
+                //  Find the most expensive product
+const expensiveProduct =Math.max(...product.map(expensive=>expensive.price));
+ console.log(expensiveProduct);
+
+    </script>
+</body>
+</html>

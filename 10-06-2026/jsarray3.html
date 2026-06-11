@@ -18,27 +18,27 @@ console.log(scoreUpdate);
 const scoreAdd=scores.map(score=>score+5);
 console.log(scoreAdd);
 
-        // Get all scores greater than 50.
+        // Get all scores greater than 50
 const scoreGreater=scores.filter(score=>score>50);
 console.log(scoreGreater);
 
-        //    Get all scores greater than or equal to 80.
+        //    Get all scores greater than or equal to 80
 const scoreEqual=scores.filter(score=>score>=80);
 console.log(scoreEqual);
 
-            //   Find the first score greater than 70.
+            //   Find the first score greater than 70
 const scoreFirst=scores.find(score=>score>70);
 console.log(scoreFirst);
 
-                //  Find the first score equal to 100.
+                //  Find the first score equal to 100
 const scoreMore=scores.find(score=>score>=100);
 console.log(scoreMore);
 
-                //    Calculate the TotalRUNS.
+                //    Calculate the TotalRUNS
 const scoreRuns=scores.reduce((sum,score)=>sum+score,0);
 console.log(scoreRuns);
 
-            //   Calculate the average score.
+            //   Calculate the average score
 const scoretotal=scores.reduce((sum,score)=>sum+score,0);
 const average = scoretotal / scores.length;
 console.log(average);

@@ -14,35 +14,35 @@
   { item: "Ice Cream", price: 100 }
 ];
 
-            //    Create an array containing only food item names.
+            //    Create an array containing only food item names
 const foodItem=foodOrders.map(food=>food.item);
 console.log(foodItem);
 
-                //    Create an array containing only food prices.
+                //    Create an array containing only food prices
 
 const foodPrices=foodOrders.map(food=>food.price);
 console.log(foodPrices);
-                    //   Increase every food price by ₹50.
+                    //   Increase every food price by ₹50
 const foodInc=foodOrders.map(food=>food.price+50);
 console.log(foodInc);
 
-                        // Get all food items costing more than ₹200.
+                        // Get all food items costing more than ₹200
 const foodThan=foodOrders.filter(food=>food.price>200);
 console.log(foodThan);
 
-                    //    Get all food items costing less than ₹250.
+                    //    Get all food items costing less than ₹250
 const foodLess=foodOrders.filter(food=>food.price<250);
 console.log(foodLess);
 
-                        //  Find the food item “Biryani”.
+                        //  Find the food item “Biryani”
 const foodFind=foodOrders.find(food=>food.item="Biryani");
 console.log(foodFind);
 
-                        //  Find the first food item costing more than ₹250.
+                        //  Find the first food item costing more than ₹250
 const foodFirst=foodOrders.filter(food=>food.price>250);
 console.log(foodFirst);
 
-                        //   Calculate the total food bill.
+                        //   Calculate the total food bill
 const totalFoodPrice = foodOrders.reduce((sum, food) => sum + food.price, 0);
 console.log(totalFoodPrice);
 

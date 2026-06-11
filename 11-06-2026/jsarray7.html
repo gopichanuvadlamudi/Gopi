@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            //    slice
+        let name = "Gopi Chandu";
+        let result = name.slice(0,7);
+        let result1 = name.slice(4);
+        let result2 = name.slice(-8);
+        console.log(result);
+        console.log(result1);
+        console.log(result2);
+
+
+        //    substr
+
+        let text = "welcome to javascript";
+
+        let result3 = text.substr(7);
+         let result4 = text.substr(4,12);
+        console.log(result3);
+         console.log(result4);
+
+
+            //   replace
+
+            let complete = "welcome java  to javascript";
+            let result5 = complete.replace("java","core");
+            console.log(result5);
+
+
+            let complete1 = "welcome java  to javascript";
+            let result6 = complete1.replace("java","Type");
+            console.log(result6);
+
+           
+             //   replaceall
+
+            let complete2 = "welcome java  to javascript";
+            let result7 = complete2.replaceAll("java","core");
+            console.log(result7);
+
+             let complete3 = "welcome java  to javascript";
+            let result8 = complete3.replaceAll("java","Type");
+            console.log(result8);
+
+
+                    //  toUpperCase()
+            let cinema = "bahubali";
+            let cinema1 = "akhanda";
+
+            let results1 = cinema.toUpperCase();
+            let results2 = cinema1.toUpperCase();
+
+            console.log(results1);
+            console.log(results2);
+
+
+                    //   toLowerCase
+            let p1 = "KEYBOARD";
+            let p2 = "MOUSE";
+
+            let results3 = p1.toLowerCase();
+            let results4 = p2.toLowerCase();
+
+            console.log(results3);
+            console.log(results4);
+
+                    
+                            //  concat()
+            let company = "oppty";
+            let fullName = company.concat(" Tech", " hub", " private ltd");
+            console.log(fullName);
+
+             let title = "java";
+            let fullTitle = title.concat(" script", " is", " Good language ");
+            console.log(fullTitle);
+
+                            // Trim
+        let userInput = "  GOPI CHANDU  ";
+        let user = userInput.trim();
+        console.log(user);
+
+        let userInput1 = " gopichandu965@gmail  ";
+        let user1 = userInput1.trim();
+        console.log(user1);
+
+
+                        //    . trimStart() 
+        let email = "    gopichandu965@gmail    ";
+        let emailType = email.trimStart();
+        console.log(emailType);
+
+
+        let Number = "    1234556   ";
+        let numberType = Number.trimStart();
+        console.log(numberType);
+
+
+                        //   trimend
+        let email1 = "    gopichandu965@   ";
+        let typeEmail = email1.trimEnd();
+        console.log(typeEmail);
+
+        let info = "    javascript   ";
+        let inforMation = info.trimEnd();
+        console.log(inforMation);
+
+
+                    //  charAt
+        let text1 = "GOPI CHANDU";
+        let singleLetter = text1.charAt(6);
+        console.log(singleLetter);
+
+
+         let text2 = "1234567";
+        let singleLetter1 = text2.charAt(6);
+        console.log(singleLetter1);
+
+
+                //  split
+        let word = "SRH";
+        let fullName1 = "sun / Risers / Hyderabad";
+        console.log(fullName1.split("/"))
+
+         let word1 = "ASAP";
+        let fullForm = "As - Soon -As - Possible";
+        console.log(fullForm.split("-"))
+
+                //  indexof()
+        let word2 = "javascript";
+        let system = word2.indexOf("s");
+        console.log(system);
+
+        let word3 = "Gopichandu";
+        let system1 = word3.indexOf("a");
+        console.log(system1);
+
+
+            
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
