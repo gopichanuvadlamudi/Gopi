@@ -115,6 +115,25 @@ const movieRating =Math.max(...pictures.map(movie=>movie.rating));
 const expensiveProduct =Math.max(...product.map(expensive=>expensive.price));
  console.log(expensiveProduct);
 
+                //  5 operations
+const productNames = product.map(products=>products.name);
+ console.log(productNames);
+
+const productMore = product.filter(products=>products.price>1000);
+ console.log(productMore);
+
+  const productId = product.find(products=>products.id===2);
+ console.log(productId);
+
+const totalValues = product.reduce((sum, products) => sum + products.price, 0);
+console.log(totalValues);
+
+product.pop();
+console.log(product);
+
+
+   
+
     </script>
 </body>
 </html>
