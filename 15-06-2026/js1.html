@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+
+const products = [
+{
+name: " wireless mouse" ,
+category: "electronics",
+quantity: 25,
+price: 799
+},
+{
+name: "Gaming Keyboard",
+category: "ELECTRONICS",
+quantity: 8,
+price: 2499
+},
+{
+name: "office chair",
+category: "furniture",
+quantity: 3,
+price: 5999
+},
+{
+name: "LED Monitor",
+category: "Electronics",
+quantity: 15,
+price: 10999
+},
+{
+name: "water bottle",
+category: "home",
+quantity: 50,
+price: 299
+}
+];
+
+
+// clean the data
+const productNames=products.map(product=>product.name.trim());
+console.log(productNames);
+
+
+// product names into Proper Case
+const productProper = products.map(product =>product.name.trim().charAt(0).toUpperCase() +  product.name.trim().slice(1));
+console.log(productProper);
+
+// names into UPPERCASE.
+const upperLetters = products.map(product =>product.category.toUpperCase());
+console.log(upperLetters);
+
+
+// inventary value
+for (let i = 0; i < products.length; i++)
+{
+        let inventoryValue = products[i].quantity * products[i].name;
+        console.log(inventoryValue);
+}
+
+
+//  DETERMINE STOCK STATUS
+
+for (let i = 0; i < products.length; i++) {
+    let stockStatus;
+
+    if (products[i].quantity > 20) {
+        stockStatus = "HIGH STOCK";
+    } 
+    else if (products[i].quantity >= 10 && products[i].quantity <= 20) {
+        stockStatus = "MEDIUM STOCK";
+    } 
+    else if (products[i].quantity >= 1 && products[i].quantity <= 9) {
+        stockStatus = "LOW STOCK";
+    } 
+    else {
+        stockStatus = "OUT OF STOCK";
+    }
+
+    console.log(products[i].name + " : " + stockStatus);
+}
+
+
+ //  Total number of products
+let totalProducts = 0;
+for(let i=0; i<products.length;i++)
+{
+  totalProducts++;
+}
+   console.log(totalProducts);
+
+
+
+   // Total inventory value
+let totalInventoryValue = 0;
+let i = 0;
+
+while (i < products.length) {
+    totalInventoryValue = products[i].quantity * products[i].price;
+    i++;
+}
+
+console.log(totalInventoryValue);
+
+// average product
+let totalPrice = 0;
+for (let i = 0; i < products.length; i++)  // for loop
+{
+    totalPrice = products[i].price;
+}
+let averagePrice = totalPrice / products.length;
+console.log("Average Product Price:", averagePrice);
+
+// most expensive product
+const expensiveProduct =Math.max(...products.map(expensive=>expensive.price));
+ console.log(expensiveProduct);
+
+
+const keyword = "ele";
+const sResults = products.filter(product =>product.category.toLowerCase().includes(keyword.toLowerCase()));
+console.log(sResults);
+
+
+    </script>
+</body>
+</html>
