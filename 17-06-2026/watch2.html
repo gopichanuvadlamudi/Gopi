@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watches</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #13233b;
+  padding: 20px 40px;
+}
+
+header h1 {
+  color: white;
+  font-size: 28px;
+}
+
+/* Search */
+.search-btn {
+  width: 35%;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.search-icon {
+  color: white;
+  margin-left: -40px;
+  cursor: pointer;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: lightgray;
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+}
+
+/* Left Side */
+.left-box {
+  width: 45%;
+}
+
+.main-watch {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.small-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.small-images img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid gray;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Right Side */
+.right-box {
+  width: 35%;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-box h2 {
+  font-size: 40px;
+}
+
+.brand {
+  color: gray;
+  margin-top: 10px;
+}
+
+.price {
+  margin: 20px 0;
+}
+
+.new-price {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 10px;
+}
+
+.discount {
+  color: green;
+  margin-left: 10px;
+}
+
+.description {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Quantity */
+.quantity-box {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.quantity-box button {
+  width: 40px;
+  height: 40px;
+  background: #13233b;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+.quantity-box input {
+  width: 50px;
+  text-align: center;
+}
+
+/* Add to Bag */
+.cart-btn {
+  width: 100%;
+  padding: 15px;
+  background: #13233b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Offer Box */
+.offer-box {
+  border: 1px solid lightgray;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.signup-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #13233b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>TIMELESS WATCHES</h1>
+
+      <input class="search-btn" type="text" placeholder="Search....." />
+
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+      <nav>
+        <a href="#">Shop</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Brands</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section class="container">
+      <!-- Left Side -->
+      <div class="left-box">
+        <img src="watch.jpg" alt="watch" class="main-watch" />
+
+        <div class="small-images">
+          <img src="watch.jpg" />
+          <img src="watch.jpg" />
+          <img src="watch.jpg" />
+          <img src="watch.jpg" />
+          <img src="watch.jpg" />
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="right-box">
+        <h2>Elegant Luxury Watch</h2>
+
+        <p class="brand">PRESTIGE TIME CO.</p>
+
+        <div class="price">
+          <span class="new-price">$499.99</span>
+          <span class="old-price">$799.99</span>
+          <span class="discount">38% OFF</span>
+        </div>
+
+        <p class="description">
+          This luxurious timepiece combines elegance with precision
+          craftsmanship. Perfect for formal occasions or everyday wear.
+        </p>
+
+        <p>⭐⭐⭐⭐⭐ Rated 4.8/5 (256 reviews)</p>
+
+        <!-- Quantity -->
+        <div class="quantity-box">
+          <button>-</button>
+          <input type="text" value="1" />
+          <button>+</button>
+        </div>
+
+        <!-- Button -->
+        <button class="cart-btn">Add to Bag</button>
+
+        <!-- Offer Box -->
+        <div class="offer-box">
+          <h3>Limited-Time Offer!</h3>
+          <p>Get additional 10% off your first purchase.</p>
+          <button class="signup-btn">Sign Up Now</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
