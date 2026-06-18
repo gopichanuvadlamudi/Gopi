@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Pricing</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Movie Ticket Prices</h2>
+
+    <label>Select Age:</label>
+    <select id="age">
+         <option value="0">0</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="65">65</option>
+        <option value="70">70</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>Select Showtime:</label>
+    <select id="showtime">
+        <option value="">-- Select Showtime --</option>
+        <option value="matinee">Mattinee</option>
+        <option value="evening">Evening</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="ticketPrice()">Ticket Price</button>
+
+    <h3 id="result"></h3>
+
+</div>
+
+<script src="1.js"></script>
+
+</body>
+</html>
