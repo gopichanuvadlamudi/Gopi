@@ -1,82 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Quiz</title>
-    <link rel="stylesheet" href="1.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="quiz-card">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz App</title>
+    <link rel="stylesheet" href="1.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Welcome Screen -->
+    <div class="screen active" id="welcomeScreen">
+
         <div class="icon">
-          <i class="fa-solid fa-question"></i>
+            <i class="fa-solid fa-circle-question"></i>
         </div>
 
-        <h1>
-          Welcome to the <br />
-          JavaScript Quiz!
-        </h1>
+        <h1>Welcome to the <br> JavaScript Quiz!</h1>
 
         <p>
-          Test your JavaScript knowledge with
-          <br />
-          10 multiple choice questions.
+            Test your JavaScript knowledge with
+            10 multiple choice questions.
         </p>
 
-        <div class="features">
-          <div class="feature">
-            <i class="fa-solid fa-list"></i>
-            <div>
-              <b>10</b><br />
-              Questions
-            </div>
-          </div>
+        <div class="info">
 
-          <div class="feature">
-            <i class="fa-regular fa-circle-check"></i>
-            <div>
-              Multiple<br />
-              Choice
+            <div class="box">
+                <i class="fa-solid fa-list"></i>
+                <span>10 Questions</span>
             </div>
-          </div>
 
-          <div class="feature">
-            <i class="fa-solid fa-trophy"></i>
-            <div>
-              Test Your<br />
-              Knowledge
+            <div class="box">
+                <i class="fa-solid fa-clock"></i>
+                <span>Multiple Choice</span>
             </div>
-          </div>
+
+            <div class="box">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Test Your Knowledge</span>
+            </div>
+
         </div>
 
-        <button onclick="buttonQuiz()">Start Quiz</button>
-      </div>
-      <!-- Quiz Screen -->
-      <div class="quiz-container" id="quizScreen">
-        <h4 id="questionNumber"></h4>
+        <button id="startBtn">
+            StartQuiz
+        </button>
 
-        <div class="progress">
-          <div id="progressBar"></div>
+    </div>
+
+
+    <!-- Quiz Screen -->
+    <div class="screen" id="quizScreen">
+
+        <div class="progress-text">
+            Question <span id="currentQuestion">1</span> of
+            <span id="totalQuestion">10</span>
         </div>
 
-        <div class="question-box">
-          <h2 id="question"></h2>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
 
-          <div id="answers"></div>
+        <h2 id="question">
+            Question Here
+        </h2>
+
+        <div id="answerButtons" class="answers">
+
+            <button class="answer-btn"></button>
+            <button class="answer-btn"></button>
+            <button class="answer-btn"></button>
+            <button class="answer-btn"></button>
+
         </div>
 
         <div class="buttons">
-          <button onclick="previousQuestion()">Previous</button>
-          <button onclick="nextQuestion()">Next</button>
+
+            <button id="prevBtn">
+                Previous
+            </button>
+
+            <button id="nextBtn">
+                Next
+            </button>
+
         </div>
-      </div>
+
     </div>
 
-    <script src="1.js"></script>
-  </body>
+
+    <!-- Result Screen -->
+    <div class="screen" id="resultScreen">
+
+        <div class="icon success">
+            <i class="fa-solid fa-trophy"></i>
+        </div>
+
+        <h2>Quiz Completed!</h2>
+
+        <p>You answered correctly</p>
+
+        <div class="circle">
+
+            <div class="outer">
+
+                <div class="inner">
+                    <span id="percentage">80%</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="result-details">
+
+            <div>
+                <h3 id="correct">8</h3>
+                <p>Correct</p>
+            </div>
+
+            <div>
+                <h3 id="wrong">2</h3>
+                <p>Wrong</p>
+            </div>
+
+            <div>
+                <h3 id="score">8/10</h3>
+                <p>Score</p>
+            </div>
+
+        </div>
+
+        <button id="restartBtn">
+            Restart Quiz
+        </button>
+
+    </div>
+
+</div>
+
+<script src="1.js"></script>
+
+</body>
 </html>

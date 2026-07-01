@@ -1,4 +1,4 @@
-const questions = [
+const quizData = [
 {
 question: "Which company developed JavaScript?",
 options: ["Netscape","Microsoft","Google","Oracle"],
@@ -50,114 +50,176 @@ options: ["let","var","int","define"],
 answer: "let"
 }
 ];
+// Get HTML Elements
+var welcomeScreen = document.getElementById("welcomeScreen");
+var quizScreen = document.getElementById("quizScreen");
+var resultScreen = document.getElementById("resultScreen");
 
-let currentQuestion = 0;
-let selectedAnswers = new Array(questions.length).fill(null);
+var startBtn = document.getElementById("startBtn");
+var nextBtn = document.getElementById("nextBtn");
+var prevBtn = document.getElementById("prevBtn");
+var restartBtn = document.getElementById("restartBtn");
 
-const welcomeScreen = document.getElementById("welcomeScreen");
-const quizScreen = document.getElementById("quizScreen");
-const resultScreen = document.getElementById("resultScreen");
+var question = document.getElementById("question");
+var answerButtons = document.getElementById("answerButtons");
 
-const startBtn = document.getElementById("startBtn");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const submitBtn = document.getElementById("submitBtn");
-const restartBtn = document.getElementById("restartBtn");
+var currentQuestion = document.getElementById("currentQuestion");
+var totalQuestion = document.getElementById("totalQuestion");
+var progress = document.getElementById("progress");
 
-startBtn.addEventListener("click", startQuiz);
-prevBtn.addEventListener("click", previousQuestion);
-nextBtn.addEventListener("click", nextQuestion);
-submitBtn.addEventListener("click", submitQuiz);
-restartBtn.addEventListener("click", restartQuiz);
+var correct = document.getElementById("correct");
+var wrong = document.getElementById("wrong");
+var score = document.getElementById("score");
+var percentage = document.getElementById("percentage");
 
-function startQuiz(){
+// Variables
+var currentIndex = 0;
+var scoreCount = 0;
+var selectedAnswers = [];
 
-welcomeScreen.style.display="none";
-quizScreen.style.display="block";
+totalQuestion.innerHTML = quizData.length;
 
-showQuestion();
+// Start Quiz
+startBtn.onclick = function () {
+
+    welcomeScreen.classList.remove("active");
+    quizScreen.classList.add("active");
+
+    showQuestion();
+};
+
+// Show Question
+function showQuestion() {
+
+    question.innerHTML = quizData[currentIndex].question;
+
+    currentQuestion.innerHTML = currentIndex + 1;
+
+    progress.style.width = ((currentIndex + 1) * 100 / quizData.length) + "%";
+
+    answerButtons.innerHTML = "";
+
+    for (var i = 0; i < quizData[currentIndex].options.length; i++) {
+
+        var button = document.createElement("button");
+
+        button.innerHTML = quizData[currentIndex].options[i];
+
+        button.className = "answer-btn";
+
+        if (selectedAnswers[currentIndex] == i) {
+            button.classList.add("selected");
+        }
+
+        button.onclick = selectAnswer;
+
+        answerButtons.appendChild(button);
+    }
+}
+
+// Select Answer
+function selectAnswer() {
+
+    var buttons = document.getElementsByClassName("answer-btn");
+
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("selected");
+    }
+
+    this.classList.add("selected");
+
+    var buttons = document.getElementsByClassName("answer-btn");
+
+    for (var i = 0; i < buttons.length; i++) {
+
+        if (buttons[i] == this) {
+
+            selectedAnswers[currentIndex] = i;
+
+        }
+
+    }
+}
+
+// Next Button
+nextBtn.onclick = function () {
+
+    if (selectedAnswers[currentIndex] == undefined) {
+
+        alert("Please select an answer.");
+
+        return;
+    }
+
+    if (currentIndex < quizData.length - 1) {
+
+        currentIndex++;
+
+        showQuestion();
+
+    } else {
+
+        showResult();
+
+    }
+
+};
+
+// Previous Button
+prevBtn.onclick = function () {
+
+    if (currentIndex > 0) {
+
+        currentIndex--;
+
+        showQuestion();
+
+    }
+
+};
+
+// Show Result
+function showResult() {
+
+    scoreCount = 0;
+
+    for (var i = 0; i < quizData.length; i++) {
+
+        if (selectedAnswers[i] == quizData[i].answer) {
+
+            scoreCount++;
+
+        }
+
+    }
+
+    quizScreen.classList.remove("active");
+
+    resultScreen.classList.add("active");
+
+    correct.innerHTML = scoreCount;
+
+    wrong.innerHTML = quizData.length - scoreCount;
+
+    score.innerHTML = scoreCount + "/" + quizData.length;
+
+    var percent = Math.round((scoreCount * 100) / quizData.length);
+
+    percentage.innerHTML = percent + "%";
+
 
 }
 
-function showQuestion(){
+// Restart Quiz
+restartBtn.onclick = function () {
 
-const q = questions[currentQuestion];
+    currentIndex = 0;
 
-document.getElementById("questionNumber").innerHTML =
-`Question ${currentQuestion+1} of ${questions.length}`;
+    scoreCount = 0;
 
-document.getElementById("progressBar").style.width =
-`${((currentQuestion+1)/questions.length)*100}%`;
+    selectedAnswers = [];
 
-document.getElementById("question").innerHTML=q.question;
+    resultScreen.classList.remove("active");
 
-const answers=document.getElementById("answers");
-
-answers.innerHTML="";
-
-q.options.forEach(option=>{
-
-const label=document.createElement("label");
-
-label.className="option";
-
-label.innerHTML=
-`<input type="radio" name="answer" value="${option}">
-${option}`;
-
-const radio=label.querySelector("input");
-
-if(selectedAnswers[currentQuestion]===option){
-
-radio.checked=true;
-label.classList.add("selected");
-
-}
-
-radio.addEventListener("change",function(){
-
-selectedAnswers[currentQuestion]=this.value;
-
-document.querySelectorAll(".option").forEach(opt=>{
-opt.classList.remove("selected");
-});
-
-label.classList.add("selected");
-
-});
-
-answers.appendChild(label);
-
-});
-
-prevBtn.disabled=currentQuestion===0;
-
-if(currentQuestion===questions.length-1){
-
-nextBtn.style.display="none";
-submitBtn.style.display="inline-block";
-
-}else{
-
-nextBtn.style.display="inline-block";
-submitBtn.style.display="none";
-
-}
-
-}
-
-function nextQuestion(){
-
-currentQuestion++;
-
-showQuestion();
-
-}
-
-function previousQuestion(){
-
-currentQuestion--;
-
-showQuestion();
-
-}
+    welcomeScreen.classList.add("active");
+};
