@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Interactive JavaScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+    
+      button {
+        background-color: #00ff80;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background-color: #00e645;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="mainHeading">SCRIPT</h1>
+    <p id="description">HELLO JAVASCRIPT.</p>
+
+    <button onclick="changeHeading()">Change Heading</button>
+    <button onclick="changeBackground()">Change Background</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="showDate()">Show Date</button>
+    <button onclick="resetAll()">Reset</button>
+
+    <script>
+      function changeHeading() {
+        document.getElementById("mainHeading").innerHTML =
+          "JavaScript";
+      }
+
+      function changeBackground() {
+        const bgColors = ["#FF9800", "#F44336", "#4CAF50", "#2196F3", "#9C27B0"];
+        const randomColor = bgColors[Math.floor(Math.random() * bgColors.length)];
+        document.body.style.backgroundColor = randomColor;
+      }
+
+      function changeColor() {
+        const colors = ["#FF9800", "#F44336", "#4CAF50", "#2196F3", "#9C27B0"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById("mainHeading").style.color = randomColor;
+      }
+
+      function showDate() {
+        document.getElementById("description").innerHTML =
+          "Current date and time: " + new Date();
+      }
+
+      function resetAll() {
+        document.getElementById("mainHeading").innerHTML =
+          "JavaScript!";
+        document.body.style.backgroundColor = "black";
+        document.getElementById("mainHeading").style.color = "black";
+        document.getElementById("description").innerHTML =
+          "Click the buttons below to see JavaScript in action.";
+      }
+    </script>
+  </body>
+</html>
