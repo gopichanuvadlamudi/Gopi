@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    
+    <!-- 1. -->
+<!-- <input type="text" id="inputText" placeholder="enter your name" />
+<button onclick="runFunction()">CLICK BUTTON</button>
+<div id="runOutput"></div>
+
+<script>
+function textUser(data) {
+    if (!data) return "Please enter a name first!";
+    return "Welcome to javascript: " + data ;
+}
+function runFunction() {
+    const inputres = document.getElementById('inputText').value;
+    const result = textUser(inputres);
+    document.getElementById('runOutput').innerText = result;
+}
+</script> -->
+
+<!-- 1. -->
+<!-- <input type="text" id="inputText" placeholder="Enter your name">
+
+    <button onclick="submitFunction()">Submit</button>
+
+    <p id="output"></p>
+
+    <>
+        function submitFunction() {
+
+            let userName = document.getElementById("inputText").value;
+
+            if (userName == "") {
+                document.getElementById("output").innerText = "Please enter your name.";
+            } else {
+                document.getElementById("output").innerText = "welcome to javascript " + userName + "!";
+            }
+
+        }
+
+
+
+2.
+<input type="number" id="sum1" />
+<select id="operation">
+    <option value="add">+</option>
+    <option value="multiply">*</option>
+    <option value="subtraction">-</option>
+    <option value="division">/</option>
+</select>
+<input type="number" id="sum2" />
+<button onclick="submit()">submit</button>
+<div id="outputCal"></div>
+
+
+<script>
+function calculate(sum1, sum2, operation) {
+    if (operation === 'add') return sum1 + sum2;
+    if (operation === 'multiply') return sum1 * sum1;
+    if (operation === 'subtraction') return sum1-sum2;
+    if (operation === 'division') return sum1/sum2;
+    return 0;
+}
+
+function submit() {
+    const val1 = Number(document.getElementById('sum1').value);
+    const val2 = Number(document.getElementById('sum2').value);
+    const op = document.getElementById('operation').value;
+    
+    const result = calculate(val1, val2, op);
+    document.getElementById('outputCal').innerText = "Result: " + result;
+}
+
+
+
+
+</script> -->
+
+<!-- 3. -->
+
+
+<!-- <h2>Username Validation</h2>
+
+<input type="text" id="USERNAME" placeholder="Enter Username">
+<button onclick="checkUsername()">Check</button>
+
+<p id="output"></p>
+
+<script>
+    function isValidUsername(username) {
+        return username.length >= 8;
+    }
+    function checkUsername() {
+        const username = document.getElementById("username").value;
+        const output = document.getElementById("output");
+
+        if (isValidUsername(username)) {
+            output.innerText = "Valid Username ";
+            output.style.color = "green";
+        } else {
+            output.innerText = "Username must contain at least 8 characters ";
+            output.style.color = "red";
+        }
+    }
+</script> -->
+
+<!-- 4. -->
+
+
+<!-- <h2>Discount Calculator</h2>
+
+<label>Price:</label>
+<input type="number" id="price" placeholder="Enter Price">
+
+<br><br>
+
+<label>Discount:</label>
+<select id="discount">
+    <option value="10">10%</option>
+    <option value="20">20%</option>
+    <option value="25">25%</option>
+    <option value="40">40%</option>
+    <option value="50">50%</option>
+</select>
+
+<br><br>
+
+<button onclick="FinalPrice()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+    // Function to calculate the final price
+    function calculatePrice(price, discount) {
+        return price - (price * discount / 100);
+    }
+
+    // Function to display the result
+    function FinalPrice() {
+        let price = Number(document.getElementById("price").value);
+        let discount = Number(document.getElementById("discount").value);
+
+        let finalPrice = calculatePrice(price, discount);
+
+        document.getElementById("result").innerText =
+            "Final Price = " + finalPrice.toFixed(2);
+    }
+</script> -->
+
+<!-- 5. -->
+
+
+<!-- <input type="text" id="textInput" />
+<input type="number" id="limit" />
+<button onclick="cutString()">Cut String</button>
+<div id="outputText"></div>
+
+JavaScript
+<script>
+function truncate(text, limit) {
+    if (text.length <= limit) return text;
+    return text.substring(0, limit) + '...';
+}
+
+function cutString() {
+    const text = document.getElementById("textInput").value;
+    const limit = Number(document.getElementById("limit").value);
+    
+    document.getElementById("outputText").innerText = truncate(text, limit);
+}
+</script> -->
+
+
+<!-- 6 -->
+
+
+ <!-- <div id="rolls">rolling dice</div>
+<button onclick="runDice(8)">Roll D8</button>
+<button onclick="runDice(10)">Roll D10</button>
+<button onclick="runDice(20)">Roll D20</button>
+
+
+<script>
+function rollDice(sides) {
+    return Math.floor(Math.random() * sides) + 1;
+}
+
+function runDice(type) {
+    let sides;
+
+    if (type === "D8") {
+        sides = 8;
+    } else if (type === "D10") {
+        sides = 10;
+    } else {
+        sides = 20;
+    }
+
+    let result = rollDice(sides);
+    document.getElementById("rolls").innerText =  "Your turn: " + result;
+} -->
+
+<!-- </script> -->
+
+<!-- 7 -->
+  <style>
+    #box{
+    width:300px;
+    background-color:lightgray;
+}
+
+#bar{
+    width:25%;
+    height:30px;
+    background-color:rgb(0, 255, 34);
+    color:white;
+    text-align:center;
+    line-height:30px;
+}
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div id="bar">0%</div>
+</div>
+
+<br>
+<button onclick="progress(0)">0%</button>
+<button onclick="progress(10)">10%</button>
+<button onclick="progress(20)">20%</button>
+<button onclick="progress(30)">30%</button>
+<button onclick="progress(40)">40%</button>
+<button onclick="progress(50)">50%</button>
+<button onclick="progress(60)">60%</button>
+<button onclick="progress(70)">70%</button>
+<button onclick="progress(80)">80%</button>
+<button onclick="progress(90)">90%</button>
+<button onclick="progress(100)">100%</button>
+
+<script>
+
+function progress(value)
+{
+    document.getElementById("bar").style.width = value + "%";
+    document.getElementById("bar").innerHTML = value + "%";
+}
+
+</script>
+
+
+
+
+<!-- 8 -->
+
+  <!-- <input type="text" id="name" placeholder="Enter your name">
+
+<button onclick="submitClick()">Submit</button>
+
+<div id="placetext"></div>
+<script>
+function showClick(name, hour) {
+
+    if (hour < 12) {
+        return "Good Morning, " + name ;
+    }
+    else if (hour < 17) {
+        return "Good Afternoon, " + name ;
+    }
+    else {
+        return "Good Evening, " + name ;
+    }
+
+}
+function submitClick() {
+    const name = document.getElementById('name').value 
+    const currentHour = new Date().getHours(); // 0 to 23
+    
+    document.getElementById('placetext').innerText = showClick(name, currentHour);
+}
+
+</script> -->
+</body>
+</html>
+
+
