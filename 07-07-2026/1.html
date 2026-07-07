@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div class="card">
+        <h2>Google Maps</h2>
+        <br>
+        <div class="search-box">
+            <input type="text" id="locationInput" placeholder="Enter location">
+            <button onclick="searchLocation()">Search</button>
+        </div>
+        <div id="map"></div>
+    </div>
+    <script src="1.js"></script>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcBe7VEOx9Vg0tTbb7f-Q-0319vJhoDsM&callback=initMap">
+    </script>
+</body>
+</html>
